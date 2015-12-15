@@ -1,0 +1,22 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Chef: Roberto Sottini
+	Contact: robysottini [at] gmail.com
+	Twitter: @robysottini
+	Location: Ushuaia, Tierra del Fuego, Argentina
+
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Bootstrap
+    HTML5 Boilerplate, Normalize.css
+    angularJS
+    ui-bootstrap

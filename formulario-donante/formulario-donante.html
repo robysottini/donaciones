@@ -1,0 +1,107 @@
+<section ng-controller="FormularioDonanteController">    
+    <div class="row well well-sm col-md-12">
+
+        <form name="formularioPersona" ng-submit="formularioPersona.$valid && agregarPersona(persona)" novalidate>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    <div class="form-group">
+                        <label class="control-label">Apellido</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="persona.apellido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Nombre</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="persona.nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">DNI/Pasaporte</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="persona.dni" required>
+                    </div>
+
+                    <label class="control-label">Fecha de nacimiento</label>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="sr-only">Día</label>
+                                <input type="number" class="form-control ng-pristine ng-invalid" min="1" max="31" ng-model="persona.dia" required>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="sr-only">Mes</label>
+                                <input type="number" class="form-control ng-pristine ng-invalid" min="1" max="12" ng-model="persona.mes" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="sr-only">Año</label>
+                                <input type="number" class="form-control ng-pristine ng-invalid" min="1915" max="2015" ng-model="persona.ano" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Teléfono</label>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only">Código de área</label>
+                                <input type="tel" class="form-control ng-pristine ng-invalid" size="2" ng-model="persona.codigoDeArea" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Número de teléfono</label>
+                                <input type="tel" class="form-control ng-pristine ng-invalid" size="6" ng-model="persona.telefono" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input type="email" class="form-control" ng-model="persona.email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Dirección</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="persona.direccion" required>
+                    </div>
+
+                    <!-- select.js de Angular Strap -->
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label sr-only">Grupo sanguíneo</label>
+                            <!-- select.js de Angular Strap -->
+                            <button type="button" class="btn btn-default" ng-model="persona.grupoSanguineo" data-animation="am-fade" data-html="1" bs-options="grupoSanguineo.gru_id as grupoSanguineo.gru_nombre for grupoSanguineo in rowGruposSanguineos" placeholder="Grupo sanguíneo" bs-select >
+                            Action <span class="caret"></span>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label sr-only">Frecuencia de donación</label>
+                            <!-- select.js de Angular Strap -->
+                            <button type="button" class="btn btn-default" ng-model="persona.frecuenciaDeDonacion" data-animation="am-fade" data-html="1" bs-options="frecuenciaDeDonacion.fre_id as frecuenciaDeDonacion.fre_nombre for frecuenciaDeDonacion in rowFrecuenciasDeDonacion" placeholder="Frecuencia de donación" bs-select>
+                            Action <span class="caret"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1">
+                    <div class="form-group">
+                        <label class="control-label">Nota</label>
+                        <textarea class="form-control" rows="4" ng-model="persona.nota"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <input type="submit" value="Aceptar" class="btn btn-primary btn-block">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
