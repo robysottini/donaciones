@@ -49,12 +49,12 @@ switch($_REQUEST['action']) {
 
         // Guardar resultado de la consulta SQL en un arreglo.
         $arr = $oDB->resultToArray();
-
+        
         // Convierte un string a formato JSON.
         print(json_encode($arr));
         break;
 
-    case 'agregar-persona':
+    case 'agregar-persona':        
         $persona = json_decode(file_get_contents("php://input"));
         //echo "$persona->nombre";
         $valores = 

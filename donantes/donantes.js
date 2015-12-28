@@ -19,13 +19,13 @@ myApp.controller("DonantesController", function($scope, $filter, $http) {
     $scope.rowPersonas = [];
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Solicita todas las personas al archivo personas.php y las guarda en el 
-     * array rowPersonas.
+     * Solicita todas las personas y sus respectivas próximas donaciones al
+     * archivo personas.php y las guarda en el array rowPersonas.
      */
-    $http.get("donantes/donantes.php?action=obtenerPersonas")
+    $http.get("donantes/donantes.php?action=obtener-personas")
         .success(function(response) {
             $scope.rowPersonas = response;
-            //console.log("JSON Base: " + response[0].per_nombre);
+            //console.log("JSON: " + response[0].per_nombre);
         }).
         error(function(data, status, headers, config) {
             console.log("Error en main.js > donantes.php?action=obtenerPersonas. Status: " + status + ".");
