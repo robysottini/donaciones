@@ -20,26 +20,59 @@ myApp.directive("formularioDonacion", function() {
 myApp.controller("FormularioDonacionController", function($scope, $filter, $http) {
 
     $scope.donacion = {
-		/*
-	    nombre: "33931635",
-	    dia: 17,
-	    mes: 06,
-	    ano: 1988
-	    */
-	};
-	
-	/* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-	 * Envía el objeto donacion al archivo formulario-donacion.php para agregar
-	 * una nueva donacion.
-	 */
-	$scope.agregarDonacion = function() {
-	    //console.log("donacion para agregar: " + $scope.donacion.nombre);
-	    $http.post("formulario-donacion/formulario-donacion.php?action=agregar-donacion", $scope.donacion)
-	        .then(function(response) {
-	            //console.log("Respuesta: " + response.status);
-	            //console.log("Data: " + response.data);
-	            $scope.donacion = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
-	        });
-	};	
+        /*
+        fecha: "2015-10-16",
+        persona: 45,
+        */
+    };
+    $scope.donanteSeleccionado = {};
+    $scope.rowPersonas = [];
+    /*var myAlert = $alert({
+        title: 'Holy guacamole!', 
+        content: 'Best check yo self, you\'re not looking too good.', 
+        placement: 'top', 
+        type: 'info', 
+        show: true
+    });
+*/
+    /**
+     * Diálogo de alerta que hereda comportamiento de los diálogos modales.
+     * Directiva nativa de AngularStrap.
+     */
+    $scope.alert = {
+        "title": "Nueva donación exitosa",
+        "dismissable": false,
+        "type": "success",
+        "show": true
+    };
+
+    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     * Solicita todas las personas al archivo formulario-donacion.php y las 
+     * guarda en el array rowPersonas.
+     */
+    $http.get("formulario-donacion/formulario-donacion.php?action=obtener-personas")
+        .success(function(response) {
+            $scope.rowPersonas = response;
+            //console.log(JSON.stringify($scope.rowPersonas, null, 2));
+        }).
+        error(function(data, status, headers, config) {
+            console.log("Error en main.js > formulario-donacion.php?action=obtener-personas. Status: " + status + ".");
+    });
+    
+    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     * Envía el objeto donacion al archivo formulario-donacion.php para agregar
+     * una nueva donación.
+     */
+    $scope.agregarDonacion = function() {
+        $scope.donacion.persona = $scope.donanteSeleccionado.per_id;
+        console.log(JSON.stringify($scope.donacion, null, 2));
+        //console.log("donacion para agregar: " + $scope.donacion.nombre);
+        $http.post("formulario-donacion/formulario-donacion.php?action=agregar-donacion", $scope.donacion)
+            .then(function(response) {
+                //console.log("Respuesta: " + response.status);
+                //console.log("Data: " + response.data);
+                $scope.donacion = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+            });
+    };    
 
 });

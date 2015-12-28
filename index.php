@@ -21,8 +21,13 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="js/vendor/ui-bootstrap-tpls.min.js"></script>
         <script src="js/vendor/angular-sanitize.min.js"></script>
+
+        <!-- Código JavaScript de la librería AngularStrap -->
         <script src="js/vendor/angular-strap.min.js"></script>
+
+        <!-- Plantillas en línea HTML por defecto usadas por las directivas de AngularStrap -->
         <script src="js/vendor/angular-strap.tpl.min.js"></script>
+
         <script src="js/vendor/angular-smart-table.min.js"></script>
         <script src="js/vendor/lodash.min.js"></script>
         <!-- Configuraciones de la tabla Smart Table. -->
@@ -46,6 +51,7 @@
         <script src="encabezado/encabezado.js"></script>
         <script src="formulario-donante/formulario-donante.js"></script>
         <script src="formulario-donacion/formulario-donacion.js"></script>
+        <script src="formulario-donante-donacion/formulario-donante-donacion.js"></script>
 
         <!-- Plugins
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -70,14 +76,17 @@
             <!-- Encabezado con el título y nombres de las agencias -->
             <encabezado></encabezado>
             <uib-tabset>
+                <uib-tab heading="Nueva donación">
+                    <formulario-donacion></formulario-donacion>
+                </uib-tab>
                 <uib-tab heading="Donantes">
                     <donantes></donantes>
                 </uib-tab>
                 <uib-tab heading="Nuevo donante">
                     <formulario-donante></formulario-donante>
                 </uib-tab>
-                <uib-tab heading="Nueva donación">
-                    <formulario-donacion></formulario-donacion>
+                <uib-tab heading="Nuevo donante con donación">
+                    <formulario-donante-donacion></formulario-donante-donacion>
                 </uib-tab>
             </uib-tabset>
         </div>

@@ -6,11 +6,10 @@ header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 $oDB = new CDatabase();
 
 switch($_REQUEST['action']) {
-	case 'obtenerPersonas':
+	case 'obtener-personas':
 		$oDB->connect();
 		$sSQL = "
-			SELECT 
-				row_number() OVER(ORDER BY donaciones2.don_ultima + frecuencias_donacion.fre_nombre * 30 DESC) AS numero_fila, 
+			SELECT  
 				personas.per_id, 
 				personas.per_dni, 
 				personas.per_nombre, 
@@ -44,7 +43,7 @@ switch($_REQUEST['action']) {
 				ON (personas.per_id = donaciones1.don_persona) 
 			) AS donaciones2 
 			ON (personas.per_id = donaciones2.per_id) 
-			ORDER BY proxima_donacion DESC; 
+			ORDER BY donaciones2.don_ultima + frecuencias_donacion.fre_nombre * 30 DESC;
 		";
 		/*
 			"

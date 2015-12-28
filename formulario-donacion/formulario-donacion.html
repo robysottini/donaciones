@@ -1,32 +1,56 @@
 <section ng-controller="FormularioDonacionController">    
     <div class="row well well-sm col-md-12">
 
-        <form name="formularioDonacion" ng-submit="formularioDonacion.$valid && agregarDonacion(donacion)" novalidate>
+        <form name="formularioDonacion" ng-submit="formularioDonacion.$valid && agregarDonacion()" novalidate>
             <div class="row">
+
+                <button data-placement="top-right" data-container="body" data-duration="3" bs-alert="alert">Click to toggle alert
+                    <br>
+                    <small>(using an object)</small>
+                </button>
+
+                <!-- You can also use data-attrs to assign scope variables -->
+                <button title="{{alert.title}}" data-content="{{alert.content}}" data-type="success" data-container="#alerts-container" bs-alert>Click to toggle alert
+                    <br>
+                    <small>(using data-attrs)</small>
+                </button>
+
+                <!-- You can use a custom html template with the `data-template` attr -->
+                <button data-template="alert/docs/alert.demo.tpl.html" data-placement="top" data-duration="3" data-animation="am-fade-and-slide-top" data-container="body" data-keyboard="true" bs-alert="alert">Custom alert
+                    <br>
+                    <small>(using data-template)</small>
+                </button>
+
+
+
                 <div class="col-md-4 col-md-offset-1">
                     <div class="form-group">
-                        <label class="control-label">Nombre del donante</label>
-                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="donacion.nombre" required>
+                        <label class="control-label">DNI/Pasaporte *</label>
+                        <input type="text" class="form-control" ng-model="donanteSeleccionado" bs-options="donante.per_dni for donante in rowPersonas" bs-typeahead required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Nombre del donante *</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-readonly="true" value="{{donanteSeleccionado.per_apellido}} {{donanteSeleccionado.per_nombre}}" required>
                     </div>
                     
-                    <label class="control-label">Fecha de donación</label>
+                    <label class="control-label">Fecha de donación *</label>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label class="sr-only">Día</label>
+                                <label class="sr-only">Día *</label>
                                 <input type="number" class="form-control ng-pristine ng-invalid" min="1" max="31" ng-model="donacion.dia" required>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label class="sr-only">Mes</label>
+                                <label class="sr-only">Mes *</label>
                                 <input type="number" class="form-control ng-pristine ng-invalid" min="1" max="12" ng-model="donacion.mes" required>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label class="sr-only">Año</label>
-                                <input type="number" class="form-control ng-pristine ng-invalid" min="1915" max="2015" ng-model="donacion.ano" required>
+                                <label class="sr-only">Año *</label>
+                                <input type="number" class="form-control ng-pristine ng-invalid" min="1990" max="2025" ng-model="donacion.ano" required>
                             </div>
                         </div>
                     </div>

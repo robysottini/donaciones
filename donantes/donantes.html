@@ -1,64 +1,53 @@
 <section ng-controller="DonantesController">
     <div class="row">
-        <!--<div class="well well-sm col-md-12">-->
-            <div class="row">
-                <div class="col-md-12">
 
-                    <!--
-                    <div class="form-group">
-                        <label class="control-label">
-                            <h2>Donantes</h2>
-                        </label>
-                    </div>
-                    -->
-                    
-                    <table st-table="display" st-safe-src="rowPersonas" class="table table-hover table-striped">
-                        <!--<caption>Título</caption>-->
-                        <thead>
-                            <tr>
-                                <th colspan="3">
-                                    <input st-search placeholder="buscar" class="input-sm form-control" type="search"/>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th st-sort-default="true">#</th>
-                                <th st-sort="per_apellido" >Apellido</th>
-                                <th st-sort="per_nombre">Nombre</th>
-                                <th>DNI/Pasaporte</th>
-                                <th st-sort="per_fecha_nacimiento">Nacimiento</th>
-                                <th>Teléfono</th>
-                                <th>Email</th>
-                                <th st-sort="fre_nombre">Frecuencia</th>
-                                <th st-sort="don_proximaDonacion">Próxima donación</th>
-                                <th>Dirección</th>
-                                <th st-sort="gru_nombre">Grupo</th>
-                                <th>Nota</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="persona in display">
-                                <td>
-                                    <a ng-href="http://www.gravatar.com/avatar/{{hash}}">
-                                        <strong>{{persona.numero_fila}}</strong>
-                                    </a>
-                                </td>
-                                <td>{{persona.per_apellido}}</td>
-                                <td>{{persona.per_nombre}}</td>
-                                <td>{{persona.per_dni}}</td>
-                                <td>{{persona.per_fecha_nacimiento}}</td>
-                                <td>{{persona.per_telefono}}</td>
-                                <td><a ng-href="mailto:{{persona.per_email}}">{{persona.per_email}}</a></td>
-                                <td>{{persona.fre_nombre}}</td>
-                                <td>{{persona.proxima_donacion}}</td>
-                                <td>{{persona.per_direccion}}</td>
-                                <td>{{persona.gru_nombre}}</td>
-                                <td>{{persona.per_nota}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="row">
+            <div class="col-md-12">
+                
+                <table st-table="display" st-safe-src="rowPersonas" class="table table-hover table-striped">
+                    <!--<caption>Título</caption>-->
+                    <thead>
+                        <tr>
+                            <th colspan="3">
+                                <input st-search placeholder="buscar" class="input-sm form-control" type="search"/>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>#</th>
+                            <th st-sort="per_apellido" >Apellido</th>
+                            <th st-sort="per_nombre">Nombre</th>
+                            <th>DNI/Pasaporte</th>
+                            <th st-sort="per_fecha_nacimiento">Nacimiento</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th st-sort="fre_nombre">Frecuencia</th>
+                            <th st-sort="don_proximaDonacion">Próxima donación</th>
+                            <th>Dirección</th>
+                            <th st-sort="gru_nombre">Grupo</th>
+                            <th>Nota</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="persona in display">
+                            <td>
+                                <strong>{{$index + 1}}</strong>
+                            </td>
+                            <td>{{persona.per_apellido}}</td>
+                            <td>{{persona.per_nombre}}</td>
+                            <td>{{persona.per_dni}}</td>
+                            <td>{{persona.per_fecha_nacimiento}}</td>
+                            <td>{{persona.per_telefono}}</td>
+                            <td><a ng-href="mailto:{{persona.per_email}}">{{persona.per_email}}</a></td>
+                            <td>{{persona.fre_nombre}}</td>
+                            <td>{{persona.proxima_donacion}}</td>
+                            <td>{{persona.per_direccion}}</td>
+                            <td>{{persona.gru_nombre}}</td>
+                            <td>{{persona.per_nota}}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                </div>
             </div>
-        <!--</div>-->
+        </div>
     </div>
 </section>
