@@ -71,7 +71,7 @@ switch($_REQUEST['action']) {
                   $persona->frecuenciaDeDonacion . ", " . 
             "'" . $persona->nota . "'" . 
             ")"
-        ;        
+        ;
         
         $oDB->connect();
         

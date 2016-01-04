@@ -121,11 +121,11 @@ textarea {
  * Usado por Angular: Colores de los bordes de los campos de entrada para los campos required.
  */
 .ng-invalid.ng-dirty {
-    border-color: #FA787E;
+    border-color: #d9534f;
 }
 
 .ng-valid.ng-dirty {
-    border-color: #78Fa89;
+    border-color: #5cb85c;
 }
 
 
