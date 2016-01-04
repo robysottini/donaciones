@@ -19,6 +19,7 @@ myApp.directive("formularioDonacion", function() {
 
 myApp.controller("FormularioDonacionController", function($scope, $filter, $http) {
 
+    // Inicializo el 
     $scope.donacion = {
         /*
         fecha: "2015-10-16",
@@ -71,7 +72,9 @@ myApp.controller("FormularioDonacionController", function($scope, $filter, $http
             .then(function(response) {
                 //console.log("Respuesta: " + response.status);
                 //console.log("Data: " + response.data);
-                $scope.donacion = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+                $scope.donacion = {}; // Limpio los campos.
+                $scope.donanteSeleccionado = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+                $scope.formularioDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
             });
     };    
 

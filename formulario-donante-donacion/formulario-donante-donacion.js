@@ -74,6 +74,7 @@ myApp.controller("FormularioDonanteDonacionController", function($scope, $filter
                 //console.log("Respuesta: " + response.status);
                 //console.log("Data: " + response.data);
                 $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+                $scope.formularioDonanteDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
             });
     };    
 
