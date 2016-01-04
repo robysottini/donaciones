@@ -39,12 +39,12 @@ myApp.controller("FormularioDonacionController", function($scope, $filter, $http
      * Diálogo de alerta que hereda comportamiento de los diálogos modales.
      * Directiva nativa de AngularStrap.
      */
-    $scope.alert = {
+    /*$scope.alerta = {
         "title": "Nueva donación exitosa",
         "dismissable": false,
         "type": "success",
-        "show": true
-    };
+        "show": false
+    };*/
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
      * Solicita todas las personas al archivo formulario-donacion.php y las 
