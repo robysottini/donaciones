@@ -54,28 +54,27 @@ switch($_REQUEST['action']) {
         print(json_encode($arr));
         break;
 
-    case 'agregar-persona':        
-        $persona = json_decode(file_get_contents("php://input"));
-        //echo "$persona->nombre";
-        $valores = 
+    case 'agregar-donante-donacion':
+        echo ("String: ");
+        $donanteDonacion = json_decode(file_get_contents("php://input"));
+        //echo "$donanteDonacion->nombre";
+        $valoresPersona = 
             "(" . 
-            "'" . $persona->nombre . "', " . 
-            "'" . $persona->apellido . "', " . 
-            "'" . $persona->dni . "', " . 
-            "'" . $persona->ano . "-" . $persona->mes . "-" . $persona->dia . "', " . 
-            "'" . $persona->codigoDeArea . "', " . 
-            "'" . $persona->telefono . "', " . 
-            "'" . $persona->email . "', " . 
-            "'" . $persona->direccion . "', " . 
-                  $persona->grupoSanguineo . ", " . 
-                  $persona->frecuenciaDeDonacion . ", " . 
-            "'" . $persona->nota . "'" . 
+            "'" . $donanteDonacion->nombre . "', " . 
+            "'" . $donanteDonacion->apellido . "', " . 
+            "'" . $donanteDonacion->dni . "', " . 
+            "'" . $donanteDonacion->ano . "-" . $donanteDonacion->mes . "-" . $donanteDonacion->dia . "', " . 
+            "'" . $donanteDonacion->codigoDeArea . "', " . 
+            "'" . $donanteDonacion->telefono . "', " . 
+            "'" . $donanteDonacion->email . "', " . 
+            "'" . $donanteDonacion->direccion . "', " . 
+                  $donanteDonacion->grupoSanguineo . ", " . 
+                  $donanteDonacion->frecuenciaDeDonacion . ", " . 
+            "'" . $donanteDonacion->nota . "'" . 
             ")"
         ;        
         
-        $oDB->connect();
-        
-        $sSQL = "
+        $sSQLInsertPersonas = "
             INSERT INTO personas (
                 per_nombre, 
                 per_apellido, 
@@ -88,12 +87,28 @@ switch($_REQUEST['action']) {
                 per_gru_sanguineo, 
                 per_frecuencia, 
                 per_nota) 
-            VALUES " . $valores . ";"
+            VALUES " . $valoresPersona . "; "
         ;
 
-        $stringPrueba = "abc";
+        $valoresDonacion = 
+            "(" . 
+            "'" . $donanteDonacion->anoDeDonacion . "-" . $donanteDonacion->mesDeDonacion . "-" . $donanteDonacion->diaDeDonacion . "', " . 
+                  "currval('personas_per_id_seq')" .
+            ")"
+        ;
+        
+        $sSQLInsertDonaciones = "
+            INSERT INTO donaciones (
+                don_fecha, 
+                don_persona) 
+            VALUES " . $valoresDonacion . "; "
+        ;
+
+        $sSQL = $sSQLInsertPersonas . $sSQLInsertDonaciones;
+        
         echo ("String: " . $sSQL);
 
+        $oDB->connect();
         $oDB->query($sSQL);
         $arr = $oDB->resultToArray();
         print(json_encode($arr));

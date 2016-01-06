@@ -1,5 +1,5 @@
 /**
- * Módulo Donante con directiva personalizada.
+ * Módulo Donante y Donacion con directiva personalizada.
  * Acá se agrega el código JavaScript del componente de UI-Bootrap que se
  * necesite, como el código para Tabs.
  * También se llaman los archivos php que interactúan con la base de datos.
@@ -19,21 +19,25 @@ myApp.controller("FormularioDonanteDonacionController", function($scope, $filter
 
     $scope.rowGruposSanguineos = [];
     $scope.rowFrecuenciasDeDonacion = [];
-    $scope.persona = {
-        /*
+    $scope.rowDonantes = [];
+    $scope.donanteSeleccionado = {};
+    $scope.donanteDonacion = {
+        apellido: "Ponce4",
+        nombre: "Elizabeth4",
         dni: 33931635,
-        nombre: "Elizabeth",
-        apellido: "Ponce",
         dia: 17,
         mes: 06,
         ano: 1988,
-        nota: "",
-        frecuenciaDeDonacion: 3,
-        direccion: "Las Vertientes 639",
-        grupoSanguineo: 3,
-        email: "lizi@gmail.com",
         telefono: "15123456",
-        */
+        email: "lizi@gmail.com4",
+        direccion: "Calle falsa 123",
+        grupoSanguineo: 3,
+        frecuenciaDeDonacion: 3,
+        nota: "Presión baja.",
+        diaDeDonacion: 05,
+        mesDeDonacion: 01,
+        anoDeDonacion: 2016,
+        
         codigoDeArea: "02901" // Valor por defecto que aparece en el formulario.
     };
 
@@ -47,7 +51,7 @@ myApp.controller("FormularioDonanteDonacionController", function($scope, $filter
             //console.log("Grupo Sanguineo[0]: " + response[0].gru_nombre);
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en main.js > formulario-donante-donacion/formulario-donante-donacion.php?action=obtenerGruposSanguineos. Status: " + status + ".");
+            console.log("Error en main.js > formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos. Status: " + status + ".");
     });    
     
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -60,68 +64,37 @@ myApp.controller("FormularioDonanteDonacionController", function($scope, $filter
             //console.log("Frecuencia de donación[0]: " + response[0].fre_nombre);
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en main.js > formulario-donante-donacion/formulario-donante-donacion.php?action=obtenerFrecuenciasDeDonacion. Status: " + status + ".");
+            console.log("Error en main.js > formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-frecuencias-de-donacion. Status: " + status + ".");
     });
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Envía el objeto persona al archivo formulario-donante-donacion.php para agregar una
-     * nueva persona.
+     * Solicita todos los donantes al archivo formulario-donante-donacion.php y las
+     * guarda en el array rowDonantes.
      */
-    $scope.agregarPersona = function() {
-        //console.log("Persona para agregar: " + $scope.persona.nombre);
-        $http.post("formulario-donante-donacion/formulario-donante-donacion.php?action=agregar-persona", $scope.persona)
-            .then(function(response) {
-                //console.log("Respuesta: " + response.status);
-                //console.log("Data: " + response.data);
-                $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
-                $scope.formularioDonanteDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
-            });
-    };    
-
-
-
-
-    $scope.donacion = {
-        /*
-        fecha: "2015-10-16",
-        persona: 45,
-        */
-    };
-
-    $scope.donanteSeleccionado = {};
-
-    $scope.rowPersonas = [];
-
-    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Solicita todas las personas al archivo formulario-donacion.php y las 
-     * guarda en el array rowPersonas.
-     */
-    $http.get("formulario-donacion/formulario-donacion.php?action=obtener-personas")
+    $http.get("formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes")
         .success(function(response) {
-            $scope.rowPersonas = response;
-            //console.log(JSON.stringify($scope.rowPersonas, null, 2));
+            $scope.rowDonantes = response;
+            //console.log(JSON.stringify($scope.rowDonantes, null, 2));
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en main.js > formulario-donacion.php?action=obtener-personas. Status: " + status + ".");
+            console.log("Error en main.js > formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes. Status: " + status + ".");
     });
-    
+
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Envía el objeto donacion al archivo formulario-donacion.php para agregar
-     * una nueva donación.
+     * Envía el objeto donanteDonacion al archivo
+     * formulario-donante-donacion.php para agregar una nuevo donante y una
+     * nueva donación.
      */
-    $scope.agregarDonacion = function() {
-        $scope.donacion.persona = $scope.donanteSeleccionado.per_id;
-        console.log(JSON.stringify($scope.donacion, null, 2));
-        //console.log("donacion para agregar: " + $scope.donacion.nombre);
-        $http.post("formulario-donacion/formulario-donacion.php?action=agregar-donacion", $scope.donacion)
+    $scope.agregarDonanteDonacion = function() {
+        //$scope.donanteDonacion.donante = $scope.donanteSeleccionado.per_id;
+        //console.log("donanteDonacion = " + JSON.stringify($scope.donanteDonacion, null, 2));
+        //console.log("Donante para agregar: " + $scope.donante.nombre);
+        $http.post("formulario-donante-donacion/formulario-donante-donacion.php?action=agregar-donante-donacion", $scope.donanteDonacion)
             .then(function(response) {
                 //console.log("Respuesta: " + response.status);
                 //console.log("Data: " + response.data);
-                $scope.donacion = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+                $scope.donanteDonacion = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+                $scope.formularioDonanteDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
             });
-    };    
-
-
-
-
+    };
 });
