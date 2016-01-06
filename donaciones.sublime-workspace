@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"log",
+				"$log	AngularJS"
+			],
+			[
+				"per_codigo_are",
+				"per_codigo_area"
+			],
+			[
+				"per_ar",
+				"per_codigo_area"
+			],
+			[
+				"ng-c",
+				"ng-controller	AngularJS"
+			],
+			[
+				"resour",
+				"angular: $resource"
+			],
+			[
+				"scede",
+				"$sceDelegateProvider	AngularJS"
+			],
+			[
+				"$sced",
+				"$sceDelegateProvider	AngularJS"
+			],
+			[
+				"frec",
+				"frecuenciaDeDonacion"
+			],
+			[
+				"PA",
+				"parametros"
+			],
+			[
 				"formul",
 				"formulario-donante"
 			],
@@ -170,10 +206,6 @@
 			[
 				"ano",
 				"anoliqlic"
-			],
-			[
-				"ng-c",
-				"ng-cloak	AngularJS"
 			],
 			[
 				"mon",
@@ -482,134 +514,16 @@
 			[
 				"idest",
 				"idestciv"
-			],
-			[
-				"ides",
-				"idest"
-			],
-			[
-				"adm",
-				"administrativo"
-			],
-			[
-				"co",
-				"concepto"
-			],
-			[
-				"AD",
-				"adminstrador"
-			],
-			[
-				"ido",
-				"idofi_padre"
-			],
-			[
-				"admi",
-				"administrador"
-			],
-			[
-				"fle",
-				"flexibilidadRegreso"
-			],
-			[
-				"ini",
-				"Inicio"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/frmSolicitudLicencia.php",
-			"settings":
-			{
-				"buffer_size": 1669,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "app.controller('FrmSolicitudLicencia', ['$scope', '$http', '$sce', 'URLS', 'toastr','AUTH','$filter', function($scope, $http, $sce, URLS, toastr, AUTH, $filter) {\n\n    $scope.rowPersonas = [];\n    $scope.personaSeleccionada = {};\n    $scope.anoLicenciaSeleccionado;\n    $scope.parametros = {};\n    $scope.selectedState = \"\";\n    $scope.states = [\"Alabama\",\"Alaska\",\"Arizona\",\"Arkansas\",\"California\",\"Colorado\",\"Connecticut\",\"Delaware\",\"Florida\",\"Georgia\",\"Hawaii\",\"Idaho\",\"Illinois\",\"Indiana\",\"Iowa\",\"Kansas\",\"Kentucky\",\"Louisiana\",\"Maine\",\"Maryland\",\"Massachusetts\",\"Michigan\",\"Minnesota\",\"Mississippi\",\"Missouri\",\"Montana\",\"Nebraska\",\"Nevada\",\"New Hampshire\",\"New Jersey\",\"New Mexico\",\"New York\",\"North Dakota\",\"North Carolina\",\"Ohio\",\"Oklahoma\",\"Oregon\",\"Pennsylvania\",\"Rhode Island\",\"South Carolina\",\"South Dakota\",\"Tennessee\",\"Texas\",\"Utah\",\"Vermont\",\"Virginia\",\"Washington\",\"West Virginia\",\"Wisconsin\",\"Wyoming\"];\n\n    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n     * Solicita todas las personas al archivo\n     * ../../server/frmSolicitudLicencia.php y las guarda en el array\n     * rowPersonas.\n     */\n    $http.get(\"../../server/frmSolicitudLicencia.php?action=obtener-personas\")\n        .success(function(response) {\n            $scope.rowPersonas = response;\n            //console.log(JSON.stringify($scope.rowPersonas, null, 2));\n        }).\n        error(function(data, status, headers, config) {\n            console.log(\"Error en: ../../server/frmSolicitudLicencia.php?action=obtener-personas. Status: \" + status + \".\");\n    });\n\n    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n     * Solicita todas las personas al archivo\n     * ../../server/frmSolicitudLicencia.php y las guarda en el array\n     * rowPersonas.\n     */\n    $scope.mostrarDiasRestantes = function() {\n        $scope.parametros = {\n            idper: $scope.personaSeleccionada.nameper,\n            ano: $scope.personaSeleccionada.anoLicencia\n        }\n\n        console.log(JSON.stringify($scope.solicitud, null, 2));\n        //console.log(\"Solicitud para agregar: \" + $scope.solicitud.nombre);\n        $http.post(\"../../server/frmSolicitudLicencia.php?action=obtener-personas-dias-restantes\", $scope.parametros)\n            .then(function(response) {\n                //console.log(\"Respuesta: \" + response.status);\n                //console.log(\"Data: \" + response.data);\n                $scope.diasRestantes = ;\n            });\n    }\n}]);",
-			"file": "/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/js_controllers/frmSolicitudLicencia.js",
-			"file_size": 2809,
-			"file_write_time": 130949271378857693,
-			"settings":
-			{
-				"buffer_size": 2490,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\n\ninclude(\"classes/CDatabase.php\");\nheader('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');\n\n$oDB = new CDatabase();\n\nswitch($_REQUEST['action']) {\n    case 'obtener-personas':\n        $sSQL = \"\n            SELECT  \n                persons.idper, \n                persons.nameper, \n                persons.numdocper\n            FROM persons \n            ;\n        \";\n        //  Creo una conexión.\n        $oDB->connect();\n\n        // Ejecutar la consulta SQL.\n        $oDB->query($sSQL);\n\n        // Desconectarse de la base de datos.\n        $oDB->disconnect();\n\n        // Guardar resultado de la consulta SQL en un arreglo.\n        $arr = $oDB->resultToArray();\n\n        // Convierte un string a formato JSON.\n        print(json_encode($arr));\n        break;\n    \n    case 'obtener-dias-restantes':\n        //$parametros es un objeto \n        $parametros = json_decode(file_get_contents(\"php://input\"));\n        //echo \"$persona->nombre\";\n           \n\n}\n\n?>",
-			"file": "/home/roby/Documentos/DPOSS/Haberes3/git/h3/server/frmSolicitudLicencia.php",
-			"file_size": 1593,
-			"file_write_time": 130949247636537549,
-			"settings":
-			{
-				"buffer_size": 998,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "formulario-donacion/formulario-donacion.html",
-			"settings":
-			{
-				"buffer_size": 3836,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "formulario-donacion/formulario-donacion.js",
-			"settings":
-			{
-				"buffer_size": 2936,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "js/vendor/angular-strap.min.js",
-			"settings":
-			{
-				"buffer_size": 78284,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "formulario-donacion/formulario-donacion.php",
-			"settings":
-			{
-				"buffer_size": 1697,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "formulario-donante-donacion/formulario-donante-donacion.html",
-			"settings":
-			{
-				"buffer_size": 7574,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "formulario-donante-donacion/formulario-donante-donacion.js",
-			"settings":
-			{
-				"buffer_size": 5124,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "formulario-donante-donacion/formulario-donante-donacion.php",
-			"settings":
-			{
-				"buffer_size": 2946,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "formulario-donante/formulario-donante.html",
 			"settings":
 			{
-				"buffer_size": 5875,
+				"buffer_size": 6332,
 				"line_ending": "Unix"
 			}
 		},
@@ -617,26 +531,45 @@
 			"file": "formulario-donante/formulario-donante.js",
 			"settings":
 			{
-				"buffer_size": 3308,
+				"buffer_size": 6879,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n\ninclude(\"../librerias/CDatabase.php\");\nheader('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');\n\n$oDB = new CDatabase();\n\nswitch($_REQUEST['action']) {\n    case 'obtener-grupos-sanguineos':\n        $sSQL = \"\n            SELECT \n                grupos_sanguineos.gru_id, \n                grupos_sanguineos.gru_nombre\n            FROM grupos_sanguineos\n            ORDER BY gru_id;\n        \";\n\n        // Creo una conexión.\n        $oDB->connect();\n\n        // Ejecutar la consulta SQL.\n        $oDB->query($sSQL);\n\n        // Desconectarse de la base de datos.\n        $oDB->disconnect();\n\n        // Guardar resultado de la consulta SQL en un arreglo.\n        $arr = $oDB->resultToArray();\n\n        // Convierte un string a formato JSON.\n        print(json_encode($arr));\n        break;\n\n    case 'obtener-frecuencias-de-donacion':\n        $oDB->connect();\n        $sSQL = \"\n            SELECT \n                frecuencias_donacion.fre_id, \n                frecuencias_donacion.fre_nombre || ' meses' AS fre_nombre \n            FROM frecuencias_donacion \n            ORDER BY fre_nombre;\n        \";\n\n        // Ejecutar la consulta SQL.\n        $oDB->query($sSQL);\n\n        // Desconectarse de la base de datos.\n        $oDB->disconnect();\n\n        // Guardar resultado de la consulta SQL en un arreglo.\n        $arr = $oDB->resultToArray();\n\n        // Convierte un string a formato JSON.\n        print(json_encode($arr));\n        break;\n\n    case 'agregar-persona':\n        $persona = json_decode(file_get_contents(\"php://input\"));\n        //echo \"$persona->nombre\";\n        $valores = \n            \"(\" . \n            \"'\" . $persona->nombre . \"', \" . \n            \"'\" . $persona->apellido . \"', \" . \n            \"'\" . $persona->dni . \"', \" . \n            \"'\" . $persona->ano . \"-\" . $persona->mes . \"-\" . $persona->dia . \"', \" . \n            \"'\" . $persona->codigoDeArea . \"', \" . \n            \"'\" . $persona->telefono . \"', \" . \n            \"'\" . $persona->email . \"', \" . \n            \"'\" . $persona->direccion . \"', \" . \n                  $persona->grupoSanguineo . \", \" . \n                  $persona->frecuenciaDeDonacion . \", \" . \n            \"'\" . $persona->nota . \"'\" . \n            \")\"\n        ;\n        \n        $oDB->connect();\n        \n        $sSQL = \"\n            INSERT INTO personas (\n                per_nombre, \n                per_apellido, \n                per_dni, \n                per_fecha_nacimiento, \n                per_codigo_area, \n                per_telefono, \n                per_email, \n                per_direccion, \n                per_gru_sanguineo, \n                per_frecuencia, \n                per_nota) \n            VALUES \" . $valores . \";\"\n        ;\n\n        $stringPrueba = \"abc\";\n        echo (\"String: \" . $sSQL);\n\n        $oDB->query($sSQL);\n        $arr = $oDB->resultToArray();\n        print(json_encode($arr));\n        break;\n}\n\n?>",
 			"file": "formulario-donante/formulario-donante.php",
-			"file_size": 2931,
-			"file_write_time": 130949246849889566,
 			"settings":
 			{
-				"buffer_size": 2922,
+				"buffer_size": 6768,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.php",
+			"contents": "<div ng-controller=\"DatepickerPersonalizadoController\">\n    <div class=\"form-group\">\n        \n        <p class=\"input-group\">\n            <!-- Fecha: {{persona.per_fecha_nacimiento | date: \"yyyy-MM-dd\"}} -->\n            <input type=\"date\" class=\"form-control\" \n                uib-datepicker-popup \n                ng-model=\"persona.per_fecha_nacimiento\" \n                is-open=\"popup.abierto\"\n                datepicker-options=\"opcionesDeFecha\" \n                date-disabled=\"desactivado(date, mode)\" \n                ng-required=\"true\" \n                close-text=\"Cerrar\" \n            />\n            <span class=\"input-group-btn\">\n                <button type=\"button\" class=\"btn btn-default\" ng-click=\"abrir()\">\n                    <i class=\"glyphicon glyphicon-calendar\"></i>\n                </button>\n            </span>\n        </p>\n\n    </div>\n</div>",
+			"file": "datepicker-personalizado/datepicker-personalizado.html",
+			"file_size": 862,
+			"file_write_time": 130979385026748939,
 			"settings":
 			{
-				"buffer_size": 4476,
+				"buffer_size": 862,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/**\n * Módulo Datepicker con directiva personalizada.\n * Acá se agrega el código JavaScript del componente de UI-Bootrap que se\n * necesite, como el código para Tabs.\n * \n * @author Roberto Sottini <robysottini@gmail.com>\n * @version 1.0\n */\n\nmyApp.directive(\"datepickerPersonalizado\", function() {\n    return {\n            restrict: \"E\", // Creo el nuevo elemento (E: Element) con nombre \"datepicker-personalizado\".\n            templateUrl: \"datepicker-personalizado/datepicker-personalizado.html\"\n    };\n});\n\nmyApp.controller(\"DatepickerPersonalizadoController\", function($scope) {\n    \n    $scope.today = function() {\n        $scope.per_fecha_nacimiento = new Date();\n    };\n    $scope.today();\n\n    $scope.clear = function() {\n        $scope.per_fecha_nacimiento = null;\n    };\n\n    // Disable weekend selection\n    $scope.desactivado = function(date, mode) {\n        return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);\n    };\n\n    $scope.abrir = function() {\n        $scope.popup.abierto = true;\n    };\n\n    $scope.setDate = function(year, month, day) {\n        $scope.per_fecha_nacimiento = new Date(year, month, day);\n    };\n\n    $scope.opcionesDeFecha = {\n        formatYear: 'yy',\n        startingDay: 1\n    };\n\n    $scope.formats = ['dd/MM/yyyy', 'yyyy-MM-dd', 'dd.MM.yyyy', 'shortDate'];\n    $scope.format = $scope.formats[0];\n    $scope.altInputFormats = ['M!/d!/yyyy'];\n\n    $scope.popup = {\n        abierto: false\n    };\n\n    var tomorrow = new Date();\n    tomorrow.setDate(tomorrow.getDate() + 1);\n    var afterTomorrow = new Date();\n    afterTomorrow.setDate(tomorrow.getDate() + 1);\n    $scope.events =\n        [\n            {\n                date: tomorrow,\n                status: 'full'\n            },\n            {\n                date: afterTomorrow,\n                status: 'partially'\n            }\n        ];\n\n    $scope.getDayClass = function(date, mode) {\n        if (mode === 'day') {\n            var dayToCheck = new Date(date).setHours(0,0,0,0);\n\n            for (var i = 0; i < $scope.events.length; i++) {\n                var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);\n\n                if (dayToCheck === currentDay) {\n                    return $scope.events[i].status;\n                }\n            }\n        }\n\n        return '';\n    };\n});",
+			"file": "datepicker-personalizado/datepicker-personalizado.js",
+			"file_size": 2319,
+			"file_write_time": 130979397615306158,
+			"settings":
+			{
+				"buffer_size": 2315,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/var/www/html/datepicker/index.html",
+			"settings":
+			{
+				"buffer_size": 1577,
 				"line_ending": "Unix"
 			}
 		}
@@ -825,144 +758,142 @@
 	},
 	"expanded_folders":
 	[
-		"/var/www/html/donaciones",
-		"/var/www/html/donaciones/js",
-		"/var/www/html/donaciones/js/vendor"
+		"/var/www/html/donaciones"
 	],
 	"file_history":
 	[
-		"/home/roby/Videos/Car Detailing/Shiny Cars/Temas",
-		"/home/roby/Series/Downtow Abbey/Temporada 4/DeeJayAhmed ReEncodes.txt",
-		"/home/roby/Series/Downtow Abbey/Downton.Abbey.S05.Season.5.720p.BluRay.ReEnc-DeeJayAhmed/Facebook Page & Website.txt",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmSolicitudLicencia.xml.php",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlSolicitudLicencia.php",
-		"/media/cdrom0/autorun.inf",
-		"/var/www/html/donaciones/.htaccess",
-		"/home/roby/Descargas/OPAGO.TXT",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/menus/menuDeveloper.php",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlsolicitudlicencia.php",
-		"/var/www/html/despegar_servicios/agencias.html",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/index.php",
-		"/home/roby/Series/Downtow Abbey/Downton.Abbey.S03.Season.3.w.Special.DVDRip.XviD-HAGGiS/downton.abbey.s03e08.dvdrip.xvid-haggis.sub",
-		"/home/roby/Series/Downtow Abbey/Downton.Abbey.S03.Season.3.w.Special.DVDRip.XviD-HAGGiS/downton.abbey.s03e01.dvdrip.xvid-haggis.sub",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/css/magic-bootstrap.css",
-		"/var/www/html/donaciones/js/main.js",
-		"/var/www/html/donaciones/js/vendor/bootstrap.min.js",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/server/h3_persons.php",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/server/h3_abmgeneral.php",
-		"/etc/hosts",
-		"/etc/apache2/sites-available/haberes3.conf",
-		"/etc/apache2/ports.conf",
-		"/etc/apache2/sites-enabled/haberes3.conf",
-		"/etc/apache2/apache2.conf",
-		"/var/www/html/donaciones/encabezado/encabezado.html",
-		"/var/www/html/donaciones/index.php",
-		"/var/www/html/donaciones/librerias/CDatabase.php",
-		"/var/www/html/donaciones/donantes/donantes.php",
-		"/var/www/html/donaciones/donantes/donantes.js",
-		"/var/www/html/donaciones/donantes/donantes.html",
-		"/var/www/html/donaciones/formulario-donacion/formulario-donacion.php",
-		"/etc/apache2/sites-enabled/000-default.conf",
-		"/etc/apache2/sites-available/000-default.conf",
-		"/etc/apache2/sites-available/default-ssl.conf",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/menus/menuDeveloper.php",
+		"/var/www/html/donaciones/datepicker-personalizado/datepicker-personalizado.js",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/forms/frmABMGeneral.php",
 		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/forms/js_controllers/frmABMGeneral.js",
-		"/home/roby/Documentos/DPOSS/Haberes/Licencia - Select dias restantes con proporcional de días no trabajados por agente.sql",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/js_controllers/frmPruebaFormulario.js",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/js_controllers/frmSolicitudLicencia.js",
-		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/js_controllers/frmABMGeneral.js",
-		"/home/roby/Descargas/PhpConsole.phar",
-		"/var/www/html/donaciones/tabla/donantes.js",
-		"/var/www/html/donaciones/formulario-donante.php",
-		"/var/www/html/donaciones/a/formulario-donante.php",
-		"/home/roby/Back up Gonza/recup_dir.1/report.xml",
-		"/var/www/html/donaciones/formulario-donante/formulario.donante.php",
-		"/var/www/html/donaciones/formulario/formulario.js",
-		"/var/www/html/donaciones/formulario/formulario.html",
-		"/var/www/html/donaciones/formulario_donacion/formulario_donacion.php",
-		"/var/www/html/donaciones/formulario_donacion/formulario_donacion.html",
-		"/var/www/html/donaciones/formulario_donacion/formulario_donacion.js",
-		"/var/www/html/angular-seed-master/app/view1/view1.js",
-		"/var/www/html/angular-seed-master/app/view1/view1.html",
-		"/var/www/html/donaciones/tabla/tabla.js",
-		"/var/www/html/donaciones/tabla/tabla.html",
-		"/var/www/html/donaciones/nuevaDonacion.php",
-		"/var/www/html/donaciones/personas.php",
-		"/var/www/html/donaciones/donaciones/donaciones.html",
-		"/var/www/html/donaciones/donaciones/donaciones.js",
-		"/var/www/html/donaciones/CDatabase.php",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlgendisposicion_licencia.php",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reporteDisposicionLicencia.php",
-		"/home/roby/Sony/recup_dir.1/report.xml",
-		"/home/roby/Documentos/Viaje a Punta Arenas con Lizi y Gonza 2015-12/Reserva balsa",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reportSolicitudLicencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/js/app.js",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/forms/frmABMCargaManual.php",
+		"/var/www/html/donaciones/index.php",
+		"/var/log/apache2/error.log",
+		"/var/www/html/typeahead/index.html",
 		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu.inc.php",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/back20080508/menu.inc.php",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/._menu.inc.php",
+		"/var/www/html/donaciones/js/vendor/prettyprint.js",
+		"/var/www/html/donaciones/formulario-donante/formulario-donante.php",
+		"/var/www/html/donaciones/donantes/donantes.php",
+		"/var/www/html/donaciones/datepicker-personalizado/datepicker-personalizado.html",
+		"/var/www/html/donaciones/formulario-donacion/formulario-donacion.js",
+		"/var/www/html/donaciones/formulario-donacion/formulario-donacion.html",
+		"/var/www/html/typeahead/paises/paises.js",
+		"/var/www/html/donaciones/js/main.js",
+		"/var/www/html/despegar_servicios/ciudades.json",
+		"/var/www/html/typeahead/js/vendor/node_modules/angular-strap/docs/1.0/css/docs.css",
+		"/var/www/html/typeahead/css/docs.min.css",
+		"/var/www/html/typeahead/js/vendor/angular-animate.js",
+		"/var/www/html/donaciones/js/vendor/angular-strap.tpl.js",
+		"/var/www/html/animaciones/index.html",
+		"/var/www/html/donaciones/formulario-donacion/formulario-donacion.php",
+		"/var/www/html/donaciones/css/animaciones.css",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/Ejercicios/Ejercicio 2/index.html",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_cv.inc",
 		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_lao.inc",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmSolicitudLicencia.xml (copia Roby).php",
-		"/home/roby/Documentos/DPOSS/Haberes3/Select personas y estados de licencias.sql",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/legajos.php",
-		"/home/roby/Documentos/DPOSS/Haberes3/Select personas y estados de licencias ",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/estiloReporteSolicitudLicencia.css",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlgenlicencia_art83.php",
-		"/var/www/html/despegar_servicios/js/main.js",
-		"/var/www/html/angular-seed-master/app/view1/view1_test.js",
-		"/var/www/html/angular-seed-master/app/index.html",
-		"/var/www/html/angular-seed-master/app/app.js",
-		"/home/roby/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
-		"/home/roby/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/var/www/html/angular-seed-master/app/app.css",
-		"/var/www/html/donaciones/LICENSE.txt",
-		"/var/www/html/donaciones_unico_controlador/encabezado/encabezado.html",
-		"/var/www/html/donaciones_unico_controlador/nuevaPersona.php",
-		"/var/www/html/donaciones_unico_controlador/index.php",
-		"/var/www/html/donaciones_viejo2/tabla/tabla.js",
-		"/home/roby/Back up Garramuño/claves/Veraz_1.txt",
-		"/home/roby/Back up Garramuño/claves/visa_1.txt",
-		"/home/roby/Back up Garramuño/claves/AFIP.plg",
-		"/home/roby/Back up Garramuño/agenda te 2/RamonLuna.vcf",
-		"/media/roby/SanDisk/Placa Wifi.txt",
-		"/home/roby/Desktop/The X Files Fight the Future/x-files.sub",
-		"/home/roby/Desktop/The X Files Fight the Future/the.x.files.(1998).spa.2cd.(104099)-/the.x.files.(104099).nfo",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu2.inc.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_cohen.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_haberes.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_plantas.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_catastro.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_developers.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_personal.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/back20080508/menu.inc.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/classes/CMenu.php",
+		"/var/www/html/donaciones/donantes/donantes.html",
+		"/var/www/html/donaciones/donantes/donantes.js",
+		"/var/www/html/animaciones/paises/paises.js",
+		"/var/www/html/animaciones/css/animaciones.css",
+		"/var/www/html/animaciones/js/animation.js",
+		"/var/www/html/animaciones/js/vendor/angular-animate.js",
+		"/var/www/html/animaciones/js/vendor/angular.js",
+		"/var/www/html/animaciones/animaciones/animaciones.js",
+		"/var/www/html/animaciones/animaciones.js",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/Ejercicios/Ejercicio 2/js/directory.js",
+		"/var/www/html/animaciones/contralador.js",
+		"/var/www/html/animaciones/animations.css",
+		"/var/www/html/animaciones/main.css",
+		"/var/www/html/donaciones/css/main.css",
+		"/run/user/1000/gvfs/smb-share:server=192.168.10.200,share=backups/obreque.txt",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/Ejercicios/Ejercicio 2/pais.html",
+		"/home/roby/Documentos/Afip reintegro 35%/consultaMisRetenciones.do.txt",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reporteDisposicionLicencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmGenLicencia_art83.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlSolicitudLicencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlgendisposicion_licencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmGenDisposicion_licencia.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reportSolicitudLicencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmReportResumenLicencia.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmSolicitudLicencia.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlsolicitudlicencia.php",
 		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reportResumenLicencia.php",
-		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/classes/CDatabase.php",
-		"/var/www/html/donaciones/index.html",
-		"/var/www/html/equienergia/index.php",
-		"/home/roby/Descargas/index.php",
-		"/var/www/html/donaciones/index2.html",
-		"/var/www/html/donaciones/js/formulario.js",
-		"/var/www/html/donaciones/formulario.html",
-		"/var/www/html/despegar_servicios/js/agencias.js",
-		"/var/www/html/despegar_servicios/js/preferencias.js",
-		"/var/www/html/despegar_servicios/example.js",
-		"/var/www/html/despegar_servicios/index.html",
-		"/var/www/html/donaciones/example.js",
-		"/home/roby/Documentos/DPOSS/Haberes3/frmSolicitudArt14F.html",
-		"/var/www/html/despegar_servicios/css/main.css",
-		"/home/roby/.cache/.fr-J9PV7N/bootstrap-3.3.5-dist/js/bootstrap.min.js",
-		"/home/roby/.cache/.fr-6ah5pe/bootstrap-3.3.5-dist/js/bootstrap.js",
-		"/home/roby/.cache/.fr-5IpsxK/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css",
-		"/home/roby/.cache/.fr-RHesxB/bootstrap-3.3.5-dist/css/bootstrap-theme.css.map",
-		"/home/roby/.cache/.fr-Oi0Whx/bootstrap-3.3.5-dist/css/bootstrap-theme.css",
-		"/home/roby/.cache/.fr-fimPly/bootstrap-3.3.5-dist/css/bootstrap.min.css",
-		"/home/roby/.cache/.fr-CITpiE/bootstrap-3.3.5-dist/css/bootstrap.css",
-		"/home/roby/Descargas/ui-bootstrap-tpls-0.14.3.min.js",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/index.html",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/js/main.js",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/css/main.css",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/index.html",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/css/main.css",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/js/directory.js",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/js/main.js",
+		"/var/www/html/donaciones/js/vendor/angular.js",
+		"/var/www/html/donaciones/tabs-personalizado/datepicker-personalizado.js",
+		"/var/www/html/donaciones/tabs-personalizado/datepicker-personalizado.html",
+		"/var/www/html/donaciones/css/bootstrap.css",
+		"/home/roby/Descargas/angular (1).js",
+		"/var/www/html/donaciones/css/bootstrapU.css",
+		"/var/www/html/donaciones/css/angular-motion.min.css",
+		"/var/www/html/donaciones/js/vendor/ui-bootstrap-tpls.min.js",
+		"/var/www/html/donaciones/js/vendor/angular-strap.min.js",
+		"/var/www/html/donaciones/js/vendor/angular-strap.tpl.min.js",
+		"/var/www/html/donaciones/doc/usage.md",
+		"/var/www/html/donaciones/doc/html.md",
+		"/var/www/html/donaciones/js/vendor/bootstrap.js",
+		"/var/www/html/donaciones/js/vendor/bootstrap.min.js",
+		"/home/roby/.cache/.fr-BhEiQb/bootstrap-3.3.6-dist/css/bootstrap.css.map",
+		"/home/roby/.cache/.fr-F1cTS9/bootstrap-3.3.6-dist/css/bootstrap-theme.css.map",
+		"/home/roby/.cache/.fr-uoX3SL/bootstrap-3.3.6-dist/js/npm.js",
+		"/home/roby/.cache/.fr-3FqW4l/angular-1.4.8/angular-loader.js",
+		"/home/roby/.cache/.fr-prWzHT/angular-1.4.8/angular.min.js.map",
+		"/home/roby/.cache/.fr-GITo4Z/angular-1.4.8/angular.js",
+		"/home/roby/.cache/.fr-EkRSus/angular-1.4.8/version.txt",
+		"/home/roby/.cache/.fr-lAhg3g/angular-1.4.8/version.json",
+		"/home/roby/.cache/.fr-0Z6kKc/angular-1.4.8/errors.json",
 		"/var/www/html/donaciones/js/vendor/angular.min.js",
-		"/var/www/html/despegar_servicios/ruta.html",
-		"/var/www/html/despegar_servicios/preferencias.html",
-		"/var/www/html/donaciones/json/localidades.json",
-		"/var/www/html/donaciones/js/plugins.js",
-		"/var/www/html/donaciones/js/encabezado.js",
-		"/var/www/html/donaciones/encabezado.html",
-		"/home/roby/Documentos/DPOSS/Haberes/Copia haberes2/controller/classes/prueba/html2fpdf.php",
-		"/home/roby/Documentos/DPOSS/Haberes/Copia haberes2/forms/frmLogin.php",
-		"/var/www/html/despegar_servicios/js/encabezado.js",
-		"/var/www/html/despegar_directivas/preferencias.html"
+		"/var/www/html/donaciones/datepicker/datepicker.js",
+		"/var/www/html/donaciones/datepicker/datepicker.html",
+		"/var/www/html/donaciones/formulario-donante/datepicker.js",
+		"/var/www/html/despegar_directivas/js/vendor/ui-bootstrap-datepicker.js",
+		"/var/www/html/donaciones/css/bootstrap.min.css",
+		"/var/www/html/donaciones/css/bootstrap-theme.css",
+		"/var/www/html/donaciones/css/bootstrap-theme.min.css",
+		"/var/www/html/donaciones/formulario-donante-donacion/formulario-donante-donacion.php",
+		"/home/roby/Documentos/PostgreSQL/Ejercicios libro de Borja Orbegozo Arana/Capítulo 7 - Proyecto/Modificar tabla.sql",
+		"/home/roby/Documentos/PostgreSQL/Ejercicios libro de Borja Orbegozo Arana/Modificar un registro de una tabla.sql",
+		"/var/www/html/donaciones/formulario-donante/formulario-donante.html",
+		"/var/www/html/donaciones/apple-touch-icon.png",
+		"/var/www/html/donaciones/encabezado/encabezado.js",
+		"/var/www/html/donaciones/json_obsoleto/frecuencias.json",
+		"/var/www/html/donaciones/json_obsoleto/localidades.json",
+		"/var/www/html/donaciones/json_obsoleto/personas (1000).json",
+		"/var/www/html/donaciones/json_obsoleto/personas.json",
+		"/var/www/html/donaciones/Originalh3_persons.php",
+		"/var/www/html/donaciones/OriginalfrmCargaManual.js",
+		"/var/www/html/donaciones/OriginalCDatabase.php",
+		"/var/www/html/donaciones/librerias/CDatabase.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/frmSolicitudLicencia.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/server/frmSolicitudLicencia.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/server/frmLicenciasAnuales.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/licencias-anuales/frmReporteLicenciasAnuales.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/form_config_files/config_feriados.json",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/angular-toastr/README.md",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/angular-smart-table/readme.md",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/angular-toasty/README.md",
+		"/home/roby/Descargas/export.doc",
+		"/home/roby/Descargas/export.txt",
+		"/media/cdrom0/Downton.Abbey.S04E08.srt",
+		"/home/roby/Documentos/DPOSS/Haberes/Exportado"
 	],
 	"find":
 	{
-		"height": 36.0
+		"height": 33.0
 	},
 	"find_in_files":
 	{
@@ -989,134 +920,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"dismissable",
-			"alerta",
-			"alert.demo",
-			"alert",
-			"aler",
-			"Alert",
-			"alert",
-			"alert.",
-			"click",
-			"alert",
-			"ano",
-			"	",
-			"most",
-			"donacion",
-			"frmSolicitudLicencia_mostrarDiasRestantes",
-			"'",
-			"control",
-			"select",
-			"año:",
+			"picke",
+			"date",
+			"frmABMGeneral",
+			"controll",
+			"datepicker-popup",
+			"dt",
+			"persona",
+			"per_fecha_nacimiento",
+			"datepicker-personalizado",
+			"personalizado",
+			"datep",
+			"per_fecha_nacimiento",
+			"fecha",
+			"stringi",
+			"frecuenciaDeDonacion",
+			"direccion",
+			"email",
+			"$",
+			"telefono",
+			"codigoDeArea",
+			"$",
+			"fecha",
+			"nombre",
+			"modifi",
+			"echo",
+			"print",
+			"esco",
+			"per_frecuencia",
+			"donanteSeleccionado",
+			"frec",
+			"persona",
+			"email",
+			"codigo",
+			"per_codigoDeArea",
+			"telefono",
+			"grupoSanguineo",
+			"codigoDeArea",
+			"per",
+			"obtener",
+			"echo",
+			"id",
+			"agreg",
+			"modifica",
+			"update d",
+			"update",
+			"actua",
+			"actualizar",
+			"Persona",
+			"persona",
+			"b",
+			"{{",
 			"persona",
 			"Persona",
 			"persona",
-			"numdocper",
-			"donante",
-			"rowPersonas",
-			"per_dni",
-			"donanteSeleccionado",
-			"rowPersonas",
-			"per_dni",
-			"numdocper",
-			".css",
-			"docs.min.css",
-			"rstrap",
-			"r strap",
-			".js",
-			"ui-",
-			"main",
-			"personas",
-			"	",
-			"rowpersonasmain",
-			"donanteSeleccionado",
-			"rowPersonasMain",
-			"personasMain",
-			"	",
-			"licen",
-			"btn btn-lg btn-primary",
-			"donante",
-			"required",
-			"última",
-			"sanguíneo",
-			"requi",
-			"u>",
-			"fecha de ",
-			"nombre del",
-			"donante",
-			"Donante",
-			"FormularioDonante",
-			"formularioDonante",
-			"donante",
-			"php",
-			"don_per",
-			"donacion",
-			"donante",
+			"Persona",
 			"persona",
-			"formulario-donacion.php?action=obtener-personas",
-			"formulario-donacion/formulario-donacion.php?action=obtener-personas",
-			"?action=obtener-personas",
-			"donacion",
-			"donantes",
-			"agregarDonacion",
-			"agregardonacion",
-			"agregardonante",
-			"\"",
-			"telé",
-			"029",
-			"290",
-			"0290",
+			"Persona",
+			"persona",
+			"Persona",
+			"persona",
+			"unPais",
+			"pais",
+			"pais.",
+			"pais",
+			"nombre",
+			"',",
+			",",
+			"capital",
+			"poblacion",
+			"paisSeleccionado",
+			"dni",
+			"position: relative",
+			"seleccio",
+			"estadoSeleccionado",
+			"estado",
+			"<",
 			"state",
-			"{{",
-			"json_encode($arr",
-			"json_encode",
-			"JSON Base",
-			"rowPersonas",
-			"obtenerp",
-			"director",
-			"grante",
-			"req",
-			"90",
-			"/*",
-			"*/",
-			"/*",
-			"abmge",
-			"donantes",
-			"placeholder",
-			"place",
-			"placeholder",
-			"placeholder=\"",
-			"abmg",
-			".js",
-			"php",
-			".php",
-			"tabla",
-			"Tabla",
-			"tabla",
-			"Tabla",
-			"tabl",
-			"tabla",
-			"Tabla",
-			"Tabl",
-			"CDatabase",
-			"grupossa",
-			".php",
-			".css",
-			"mgcrea.github.io",
-			"mgcrea",
-			"donante",
-			"http:",
-			"http",
-			"grea",
-			"formulariodonante.",
-			"formulariodonante",
-			"formulariodonante.",
-			"formulariodon",
-			"agregarP",
+			"stat",
+			"State",
+			":",
+			",",
+			"\"",
+			",",
+			"18",
+			"menu_personal",
 			"person",
-			"agreg",
-			"agregardonacion",
-			"agregarDonacion"
+			"43",
+			"46",
+			"48",
+			"49",
+			"repeat",
+			"search",
+			"animaciones",
+			"\"",
+			" pbi: ",
+			"opaci",
+			"trans",
+			"nes.js",
+			"buscar",
+			".css",
+			".enter",
+			"results",
+			".\n",
+			"friend",
+			"q",
+			"animaciones",
+			"ngAnimate",
+			"animaciones",
+			"ciudades",
+			"animaciones",
+			"ngAnimate",
+			"main",
+			"control",
+			"{",
+			".js",
+			"\"/",
+			".css",
+			".js",
+			" }",
+			" .a",
+			".a",
+			"anima",
+			"q",
+			", foto: \"",
+			"anima",
+			"animate",
+			"anima",
+			"repea"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1124,6 +1055,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"    ",
+			"Donantes",
 			"    ",
 			"rowPersonas",
 			"    ",
@@ -1249,9 +1182,7 @@
 			"]\n",
 			"[\n",
 			",\n",
-			"[\n",
-			"]\n",
-			"}\n"
+			"[\n"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1273,109 +1204,112 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/frmSolicitudLicencia.php",
+					"file": "formulario-donante/formulario-donante.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1669,
+						"buffer_size": 6332,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1086,
-								1086
+								1244,
+								1244
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 54.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/js_controllers/frmSolicitudLicencia.js",
+					"file": "formulario-donante/formulario-donante.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2490,
+						"buffer_size": 6879,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								244,
-								244
+								1806,
+								1806
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 293.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/home/roby/Documentos/DPOSS/Haberes3/git/h3/server/frmSolicitudLicencia.php",
+					"file": "formulario-donante/formulario-donante.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 998,
+						"buffer_size": 6768,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								895,
-								895
+								454,
+								454
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "formulario-donacion/formulario-donacion.html",
+					"file": "datepicker-personalizado/datepicker-personalizado.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3836,
+						"buffer_size": 862,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								336,
-								336
+								607,
+								591
 							]
 						],
 						"settings":
@@ -1394,29 +1328,30 @@
 				},
 				{
 					"buffer": 4,
-					"file": "formulario-donacion/formulario-donacion.js",
+					"file": "datepicker-personalizado/datepicker-personalizado.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2936,
+						"buffer_size": 2315,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1341,
-								1341
+								509,
+								509
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1424,277 +1359,33 @@
 				},
 				{
 					"buffer": 5,
-					"file": "js/vendor/angular-strap.min.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 78284,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "formulario-donacion/formulario-donacion.php",
+					"file": "/var/www/html/datepicker/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1697,
+						"buffer_size": 1577,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1046,
-								1046
+								1359,
+								1359
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 383.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "formulario-donante-donacion/formulario-donante-donacion.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7574,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7274,
-								7274
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1881.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "formulario-donante-donacion/formulario-donante-donacion.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5124,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3870,
-								3870
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "formulario-donante-donacion/formulario-donante-donacion.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2946,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "formulario-donante/formulario-donante.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5875,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4453,
-								4453
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/AngularJS/AngularJS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 967.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "formulario-donante/formulario-donante.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3308,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1062,
-								1062
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 864.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "formulario-donante/formulario-donante.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2922,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1536,
-								1536
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 702.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4476,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3991,
-								3991
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai (SL).tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1080.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1702,7 +1393,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1751,7 +1442,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 68.0
+		"height": 42.0
 	},
 	"save_all_on_build": false,
 	"select_file":
@@ -1805,10 +1496,10 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 223.0,
+	"side_bar_width": 211.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
-		"max_columns": 4
+		"max_columns": 1
 	}
 }

@@ -22,15 +22,15 @@ myApp.controller("FormularioDonanteDonacionController", function($scope, $filter
     $scope.rowDonantes = [];
     $scope.donanteSeleccionado = {};
     $scope.donanteDonacion = {
-        apellido: "Ponce4",
-        nombre: "Elizabeth4",
-        dni: 33931635,
+        apellido: "Juan",
+        nombre: "Pérez",
+        dni: 30123456,
         dia: 17,
         mes: 06,
         ano: 1988,
         telefono: "15123456",
-        email: "lizi@gmail.com4",
-        direccion: "Calle falsa 123",
+        email: "juanperez@gmail.com",
+        direccion: "San Martín 1234",
         grupoSanguineo: 3,
         frecuenciaDeDonacion: 3,
         nota: "Presión baja.",

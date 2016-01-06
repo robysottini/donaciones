@@ -19,23 +19,36 @@ myApp.controller("FormularioDonanteController", function($scope, $filter, $http)
 
     $scope.rowGruposSanguineos = [];
     $scope.rowFrecuenciasDeDonacion = [];
-    $scope.persona = {
+    $scope.rowPersonas = [];
+    $scope.donanteSeleccionado = {};
+    $scope.persona = {        
         /*
         dni: 33931635,
         nombre: "Elizabeth",
         apellido: "Ponce",
-        dia: 17,
-        mes: 06,
-        ano: 1988,
+        per_fecha_nacimiento: "2000-12-25",
         nota: "",
-        frecuenciaDeDonacion: 3,
+        per_frecuencia: 3,
         direccion: "Las Vertientes 639",
-        grupoSanguineo: 3,
+        per_gru_sanguineo: 3,
         email: "lizi@gmail.com",
         telefono: "15123456",
-        */
-        codigoDeArea: "02901" // Valor por defecto que aparece en el formulario.
+        
+        codigoDeArea: "02901"*/ // Valor por defecto que aparece en el formulario.
     };
+
+    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     * Solicita todas las personas al archivo formulario-donante.php y las 
+     * guarda en el array rowPersonas.
+     */
+    $http.get("formulario-donante/formulario-donante.php?action=obtener-personas")
+        .success(function(response) {
+            $scope.rowPersonas = response;
+            //console.log(JSON.stringify($scope.rowPersonas, null, 2));
+        }).
+        error(function(data, status, headers, config) {
+            console.log("Error en formulario-donante.js > formulario-donante.php?action=obtener-personas. Status: " + status + ".");
+    });
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
      * Solicita todos los grupos sanguíneos al archivo formulario-donante.php y los
@@ -47,7 +60,7 @@ myApp.controller("FormularioDonanteController", function($scope, $filter, $http)
             //console.log("Grupo Sanguineo[0]: " + response[0].gru_nombre);
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en main.js > formulario-donante/formulario-donante.php?action=obtenerGruposSanguineos. Status: " + status + ".");
+            console.log("Error en formulario-donante.js > formulario-donante/formulario-donante.php?action=obtener-grupos-sanguineos. Status: " + status + ".");
     });    
     
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -60,12 +73,12 @@ myApp.controller("FormularioDonanteController", function($scope, $filter, $http)
             //console.log("Frecuencia de donación[0]: " + response[0].fre_nombre);
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en main.js > formulario-donante/formulario-donante.php?action=obtenerFrecuenciasDeDonacion. Status: " + status + ".");
+            console.log("Error en formulario-donante.js > formulario-donante/formulario-donante.php?action=obtener-frecuencias-de-donacion. Status: " + status + ".");
     });
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Envía el objeto persona al archivo formulario-donante.php para agregar una
-     * nueva persona.
+     * Envía el objeto persona al archivo formulario-donante.php para agregar
+     * una nueva persona.
      */
     $scope.agregarPersona = function() {
         //console.log("Persona para agregar: " + $scope.persona.nombre);
@@ -76,6 +89,91 @@ myApp.controller("FormularioDonanteController", function($scope, $filter, $http)
                 $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                 $scope.formularioDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
             });
-    };    
+    };
+
+    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     * Envía el objeto persona al archivo formulario-donante.php para modificar
+     * una persona.
+     */
+    $scope.modificarPersona = function() {
+        //console.log("Persona para modificar: " + $scope.persona.nombre);
+        $http.post("formulario-donante/formulario-donante.php?action=modificar-persona", $scope.persona)
+            .then(function(response) {
+                //console.log("Respuesta: " + response.status);
+                //console.log("Data: " + response.data);
+                $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+                $scope.formularioDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
+            })
+    };
+
+/*
+    $scope.today = function() {
+        $scope.persona.per_fecha_nacimiento = new Date();
+    };
+    $scope.today();
+
+    $scope.clear = function() {
+        $scope.persona.per_fecha_nacimiento = null;
+    };
+
+    // Disable weekend selection
+    $scope.desactivado = function(date, mode) {
+        return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+    };
+
+    $scope.abrir = function() {
+        $scope.popup.abierto = true;
+    };
+
+    $scope.setDate = function(year, month, day) {
+        $scope.persona.per_fecha_nacimiento = new Date(year, month, day);
+    };
+
+    $scope.opcionesDeFecha = {
+        formatYear: 'yy',
+        startingDay: 1
+    };
+
+    $scope.formats = ['dd/MM/yyyy', 'yyyy-MM-dd', 'dd.MM.yyyy', 'shortDate'];
+    $scope.format = $scope.formats[0];
+    $scope.altInputFormats = ['M!/d!/yyyy'];
+
+    $scope.popup = {
+        abierto: false
+    };
+
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    var afterTomorrow = new Date();
+    afterTomorrow.setDate(tomorrow.getDate() + 1);
+    $scope.events =
+        [
+            {
+                date: tomorrow,
+                status: 'full'
+            },
+            {
+                date: afterTomorrow,
+                status: 'partially'
+            }
+        ];
+
+    $scope.getDayClass = function(date, mode) {
+        if (mode === 'day') {
+            var dayToCheck = new Date(date).setHours(0,0,0,0);
+
+            for (var i = 0; i < $scope.events.length; i++) {
+                var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
+
+                if (dayToCheck === currentDay) {
+                    return $scope.events[i].status;
+                }
+            }
+        }
+
+        return '';
+    };
+
+*/
 
 });

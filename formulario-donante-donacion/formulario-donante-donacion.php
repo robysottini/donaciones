@@ -11,8 +11,12 @@ switch($_REQUEST['action']) {
             SELECT 
                 grupos_sanguineos.gru_id, 
                 grupos_sanguineos.gru_nombre
-            FROM grupos_sanguineos
-            ORDER BY gru_id;
+            
+            FROM 
+                grupos_sanguineos
+            
+            ORDER BY 
+                gru_id;
         ";
 
         // Creo una conexión.
@@ -32,14 +36,20 @@ switch($_REQUEST['action']) {
         break;
 
     case 'obtener-frecuencias-de-donacion':
-        $oDB->connect();
         $sSQL = "
             SELECT 
                 frecuencias_donacion.fre_id, 
                 frecuencias_donacion.fre_nombre || ' meses' AS fre_nombre 
-            FROM frecuencias_donacion 
-            ORDER BY fre_nombre;
+            
+            FROM 
+                frecuencias_donacion 
+            
+            ORDER BY 
+                fre_nombre;
         ";
+
+        // Creo una conexión.
+        $oDB->connect();
 
         // Ejecutar la consulta SQL.
         $oDB->query($sSQL);
@@ -87,6 +97,7 @@ switch($_REQUEST['action']) {
                 per_gru_sanguineo, 
                 per_frecuencia, 
                 per_nota) 
+            
             VALUES " . $valoresPersona . "; "
         ;
 
@@ -101,6 +112,7 @@ switch($_REQUEST['action']) {
             INSERT INTO donaciones (
                 don_fecha, 
                 don_persona) 
+            
             VALUES " . $valoresDonacion . "; "
         ;
 
@@ -108,8 +120,16 @@ switch($_REQUEST['action']) {
         
         echo ("String: " . $sSQL);
 
-        $oDB->connect();
+        // Creo una conexión.
+        $oDB->connect();        
+
+        // Ejecutar la consulta SQL.
         $oDB->query($sSQL);
+
+        // Desconectarse de la base de datos.
+        $oDB->disconnect();
+
+        // Guardar resultado de la consulta SQL en un arreglo.
         $arr = $oDB->resultToArray();
         print(json_encode($arr));
         break;

@@ -13,20 +13,20 @@
 
         <!-- Mis controladores
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="js/vendor/angular.min.js"></script>
-        <script src="js/vendor/angular-animate.min.js"></script>
+        <script src="js/vendor/angular.js"></script>
+        <script src="js/vendor/angular-animate.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.min.js)
+        <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.js)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="js/vendor/ui-bootstrap-tpls.min.js"></script>
+        <script src="js/vendor/ui-bootstrap-tpls.js"></script>
         <script src="js/vendor/angular-sanitize.min.js"></script>
 
         <!-- Código JavaScript de la librería AngularStrap -->
-        <script src="js/vendor/angular-strap.min.js"></script>
-
+        <script src="js/vendor/angular-strap.js"></script>
+        
         <!-- Plantillas en línea HTML por defecto usadas por las directivas de AngularStrap -->
-        <script src="js/vendor/angular-strap.tpl.min.js"></script>
+        <script src="js/vendor/angular-strap.tpl.js"></script>
 
         <script src="js/vendor/angular-smart-table.min.js"></script>
         <script src="js/vendor/lodash.min.js"></script>
@@ -41,7 +41,7 @@
         <!-- Angular Motion: Animaciones CSS3. -->
         <link rel="stylesheet" href="css/angular-motion.min.css">
         <!-- Bootstrap: Framework HTML, CSS y JS para desarrollo responsivo. -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <!-- Normalize: Alternativa HTML5 a los resets de CSS. -->
         <link rel="stylesheet" href="css/normalize.css">
 
@@ -52,6 +52,8 @@
         <script src="formulario-donante/formulario-donante.js"></script>
         <script src="formulario-donacion/formulario-donacion.js"></script>
         <script src="formulario-donante-donacion/formulario-donante-donacion.js"></script>
+        <!-- Controlador datepicker-personalizado. -->
+        <script src="datepicker-personalizado/datepicker-personalizado.js"></script>
 
         <!-- Plugins
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -62,6 +64,7 @@
         <!-- Estilos personalizados
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/animaciones.css">
         <link rel="author" href="humans.txt" />
 
     </head>
@@ -72,24 +75,25 @@
         
         <!-- Add your site or application content here -->
         
-        <div class="container">
-            <!-- Encabezado con el título y nombres de las agencias -->
-            <encabezado></encabezado>
-            <uib-tabset>
-                <uib-tab heading="Nuevo donante con donación">
-                    <formulario-donante-donacion></formulario-donante-donacion>
-                </uib-tab>
-                <uib-tab heading="Nueva donación">
-                    <formulario-donacion></formulario-donacion>
-                </uib-tab>
-                <uib-tab heading="Donantes">
-                    <donantes></donantes>
-                </uib-tab>
-                <uib-tab heading="Nuevo donante">
-                    <formulario-donante></formulario-donante>
-                </uib-tab>
-            </uib-tabset>
-        </div>
-
+        <main>
+            <div class="container">
+                <!-- Encabezado con el título y nombres de las agencias -->
+                <encabezado></encabezado>
+                <uib-tabset>
+                    <uib-tab heading="Nuevo donante">
+                        <formulario-donante></formulario-donante>
+                    </uib-tab>
+                    <uib-tab heading="Donantes">
+                        <donantes></donantes>
+                    </uib-tab>
+                    <uib-tab heading="Nueva donación">
+                        <formulario-donacion></formulario-donacion>
+                    </uib-tab>
+                    <uib-tab heading="Nuevo donante con donación">
+                        <formulario-donante-donacion></formulario-donante-donacion>
+                    </uib-tab>
+                </uib-tabset>
+            </div>
+        </main>
     </body>
 </html>

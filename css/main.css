@@ -95,6 +95,23 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+
+
+/*
+ * Íconos de ordenamiento de tablas Smart Table.
+ */
+.full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+ }
+ 
+.partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+}
+
 /*
  * Íconos de ordenamiento de tablas Smart Table.
  */
@@ -127,9 +144,6 @@ textarea {
 .ng-valid.ng-dirty {
     border-color: #5cb85c;
 }
-
-
-
 
 
 
