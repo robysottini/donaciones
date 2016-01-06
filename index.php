@@ -20,6 +20,7 @@
         <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.min.js)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="js/vendor/ui-bootstrap-tpls.min.js2"></script>
+        <script src="js/vendor/ui-bootstrap-tpls.min.js"></script>
         <script src="js/vendor/angular-sanitize.min.js"></script>
 
         <!-- Código JavaScript de la librería AngularStrap -->
