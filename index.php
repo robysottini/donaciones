@@ -76,17 +76,17 @@
             <!-- Encabezado con el título y nombres de las agencias -->
             <encabezado></encabezado>
             <uib-tabset>
-                <uib-tab heading="Nuevo donante con donación">
-                    <formulario-donante-donacion></formulario-donante-donacion>
-                </uib-tab>
-                <uib-tab heading="Nueva donación">
-                    <formulario-donacion></formulario-donacion>
-                </uib-tab>
                 <uib-tab heading="Donantes">
                     <donantes></donantes>
                 </uib-tab>
                 <uib-tab heading="Nuevo donante">
                     <formulario-donante></formulario-donante>
+                </uib-tab>
+                <uib-tab heading="Nueva donación">
+                    <formulario-donacion></formulario-donacion>
+                </uib-tab>
+                <uib-tab heading="Nuevo donante con donación">
+                    <formulario-donante-donacion></formulario-donante-donacion>
                 </uib-tab>
             </uib-tabset>
         </div>
