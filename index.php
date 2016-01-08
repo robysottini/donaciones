@@ -19,7 +19,6 @@
 
         <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.min.js)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="js/vendor/ui-bootstrap-tpls.min.js2"></script>
         <script src="js/vendor/ui-bootstrap-tpls.min.js"></script>
         <script src="js/vendor/angular-sanitize.min.js"></script>
 
@@ -77,14 +76,14 @@
             <!-- Encabezado con el título y nombres de las agencias -->
             <encabezado></encabezado>
             <uib-tabset>
+                <uib-tab heading="Nueva donación">
+                    <formulario-donacion></formulario-donacion>
+                </uib-tab>
                 <uib-tab heading="Donantes">
                     <donantes></donantes>
                 </uib-tab>
                 <uib-tab heading="Nuevo donante">
                     <formulario-donante></formulario-donante>
-                </uib-tab>
-                <uib-tab heading="Nueva donación">
-                    <formulario-donacion></formulario-donacion>
                 </uib-tab>
                 <uib-tab heading="Nuevo donante con donación">
                     <formulario-donante-donacion></formulario-donante-donacion>
