@@ -76,6 +76,24 @@ myApp.controller("FormularioDonacionController", function($scope, $filter, $http
                 $scope.donanteSeleccionado = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                 $scope.formularioDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
             });
-    };    
+    };
+    
+    /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     * Envía el objeto donacion al archivo formulario-donacion.php para
+     * modificar una donación.
+     */
+    $scope.modificarDonacion = function() {
+        $scope.donacion.persona = $scope.donanteSeleccionado.per_id;
+        console.log(JSON.stringify($scope.donacion, null, 2));
+        //console.log("donacion para modificar: " + $scope.donacion.nombre);
+        $http.post("formulario-donacion/formulario-donacion.php?action=modificar-donacion", $scope.donacion)
+            .then(function(response) {
+                //console.log("Respuesta: " + response.status);
+                //console.log("Data: " + response.data);
+                $scope.donacion = {}; // Limpio los campos.
+                $scope.donanteSeleccionado = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
+                $scope.formularioDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
+            });
+    };
 
 });

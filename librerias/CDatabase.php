@@ -53,12 +53,12 @@ class CDatabase  {
     */
     function query($sSQL, $iArr = 0) {
         $this->rs[$iArr] = pg_query($this->conn, $sSQL);
-    //				or return 0 ;
+    //                or return 0 ;
     }
 
 /* Función antigua cuando no se usaba JSON.
     function f($sRow, $sField, $iArr = 0) {
-    //	print( $this->rs[$iArr]."-".$sRow."-".$sField);
+    //    print( $this->rs[$iArr]."-".$sRow."-".$sField);
         return pg_fetch_result($this->rs[$iArr], $sRow, $sField);
     }
 */
