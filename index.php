@@ -49,7 +49,8 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="donantes/donantes.js"></script>
         <script src="encabezado/encabezado.js"></script>
-        <script src="formulario-donante/formulario-donante.js"></script>
+        <script src="nuevo-donante/nuevo-donante.js"></script>
+        <script src="modificar-donante/modificar-donante.js"></script>
         <script src="formulario-donacion/formulario-donacion.js"></script>
         <script src="formulario-donante-donacion/formulario-donante-donacion.js"></script>
         <!-- Controlador datepicker-personalizado. -->
@@ -81,7 +82,10 @@
                 <encabezado></encabezado>
                 <uib-tabset>
                     <uib-tab heading="Nuevo donante">
-                        <formulario-donante></formulario-donante>
+                        <nuevo-donante></nuevo-donante>
+                    </uib-tab>
+                    <uib-tab heading="Modificar donante">
+                        <modificar-donante></modificar-donante>
                     </uib-tab>
                     <uib-tab heading="Donantes">
                         <donantes></donantes>
