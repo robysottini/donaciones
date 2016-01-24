@@ -1,0 +1,23 @@
+<div ng-controller="DatepickerPersonalizadoController">
+    <div class="form-group">
+        
+        <p class="input-group">
+            <!-- Fecha: {{persona.per_fecha_nacimiento | date: "yyyy-MM-dd"}} -->
+            <input type="text" class="form-control" 
+                uib-datepicker-popup 
+                ng-model="persona.per_fecha_nacimiento" 
+                is-open="popup.abierto"
+                datepicker-options="opcionesDeFecha" 
+                date-disabled="desactivado(date, mode)" 
+                ng-required="true" 
+                close-text="Cerrar" 
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="abrir()">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                </button>
+            </span>
+        </p>
+
+    </div>
+</div>

@@ -13,8 +13,12 @@ switch($_REQUEST['action']) {
                 personas.per_dni, 
                 personas.per_nombre, 
                 personas.per_apellido
-            FROM personas 
-            /*ORDER BY personas.per_dni*/
+            
+            FROM 
+                personas 
+            
+            ORDER BY 
+                personas.per_dni
             ;
         ";
         //  Creo una conexión.
@@ -47,6 +51,7 @@ switch($_REQUEST['action']) {
             INSERT INTO donaciones (
                 don_fecha, 
                 don_persona) 
+            
             VALUES " . $valores . ";"
         ;
 
@@ -61,8 +66,44 @@ switch($_REQUEST['action']) {
         // Ejecuto la consulta.
         $oDB->query($sSQL);
 
+        // Desconectarse de la base de datos.
+        $oDB->disconnect();
+
         $arr = $oDB->resultToArray();
         print(json_encode($arr));
+        break;
+
+    case 'modificar-donacion':
+    /*
+        $donacion = json_decode(file_get_contents("php://input"));
+        //echo "$donacion->nombre";
+        $valores = 
+            "(" . 
+            "'" . $donacion->ano . "-" . $donacion->mes . "-" . $donacion->dia . "', " . 
+                  $donacion->persona .
+            ")"
+        ;
+        
+        $sSQL = "
+            INSERT INTO donaciones (
+                don_fecha, 
+                don_persona) 
+            
+            VALUES " . $valores . ";"
+        ;
+
+        // Creo una conexión.
+        $oDB->connect();
+
+        // Ejecuto la consulta.
+        $oDB->query($sSQL);
+
+        // Desconectarse de la base de datos.
+        $oDB->disconnect();
+
+        $arr = $oDB->resultToArray();
+        print(json_encode($arr));
+    */
         break;
 }
 

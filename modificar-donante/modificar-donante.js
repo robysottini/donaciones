@@ -8,14 +8,14 @@
  * @version 1.0
  */
 
-myApp.directive("formularioDonante", function() {
+myApp.directive("modificarDonante", function() {
     return {
-        restrict: "E", // Creo el nuevo elemento (E: Element) con nombre "formulario-donante".
-        templateUrl: "formulario-donante/formulario-donante.html"
+        restrict: "E", // Creo el modificar elemento (E: Element) con nombre "modificar-donante".
+        templateUrl: "modificar-donante/modificar-donante.html"
     };
 });
 
-myApp.controller("FormularioDonanteController", function($scope, $filter, $http) {
+myApp.controller("ModificarDonanteController", function($scope, $filter, $http) {
 
     $scope.rowGruposSanguineos = [];
     $scope.rowFrecuenciasDeDonacion = [];
@@ -38,66 +38,66 @@ myApp.controller("FormularioDonanteController", function($scope, $filter, $http)
     };
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Solicita todas las personas al archivo formulario-donante.php y las 
+     * Solicita todas las personas al archivo modificar-donante.php y las 
      * guarda en el array rowPersonas.
      */
-    $http.get("formulario-donante/formulario-donante.php?action=obtener-personas")
+    $http.get("modificar-donante/modificar-donante.php?action=obtener-personas")
         .success(function(response) {
             $scope.rowPersonas = response;
             //console.log(JSON.stringify($scope.rowPersonas, null, 2));
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en formulario-donante.js > formulario-donante.php?action=obtener-personas. Status: " + status + ".");
+            console.log("Error en modificar-donante.js > modificar-donante.php?action=obtener-personas. Status: " + status + ".");
     });
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Solicita todos los grupos sanguíneos al archivo formulario-donante.php y los
+     * Solicita todos los grupos sanguíneos al archivo modificar-donante.php y los
      * guarda en el array rowGruposSanguineos.
      */
-    $http.get("formulario-donante/formulario-donante.php?action=obtener-grupos-sanguineos")
+    $http.get("modificar-donante/modificar-donante.php?action=obtener-grupos-sanguineos")
         .success(function(response) {
             $scope.rowGruposSanguineos = response;
             //console.log("Grupo Sanguineo[0]: " + response[0].gru_nombre);
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en formulario-donante.js > formulario-donante/formulario-donante.php?action=obtener-grupos-sanguineos. Status: " + status + ".");
+            console.log("Error en modificar-donante.js > modificar-donante/modificar-donante.php?action=obtener-grupos-sanguineos. Status: " + status + ".");
     });    
     
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
      * Solicita las frecuencias de donación (3, 4 ó 6 meses) al archivo
-     * formulario-donante.php y las guarda en el array rowFrecuenciasDeDonacion.
+     * modificar-donante.php y las guarda en el array rowFrecuenciasDeDonacion.
      */
-    $http.get("formulario-donante/formulario-donante.php?action=obtener-frecuencias-de-donacion")
+    $http.get("modificar-donante/modificar-donante.php?action=obtener-frecuencias-de-donacion")
         .success(function(response) {
             $scope.rowFrecuenciasDeDonacion = response;
             //console.log("Frecuencia de donación[0]: " + response[0].fre_nombre);
         }).
         error(function(data, status, headers, config) {
-            console.log("Error en formulario-donante.js > formulario-donante/formulario-donante.php?action=obtener-frecuencias-de-donacion. Status: " + status + ".");
+            console.log("Error en modificar-donante.js > modificar-donante/modificar-donante.php?action=obtener-frecuencias-de-donacion. Status: " + status + ".");
     });
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Envía el objeto persona al archivo formulario-donante.php para agregar
+     * Envía el objeto persona al archivo modificar-donante.php para agregar
      * una nueva persona.
      */
     $scope.agregarPersona = function() {
         //console.log("Persona para agregar: " + $scope.persona.nombre);
-        $http.post("formulario-donante/formulario-donante.php?action=agregar-persona", $scope.persona)
+        $http.post("modificar-donante/modificar-donante.php?action=agregar-persona", $scope.persona)
             .then(function(response) {
                 //console.log("Respuesta: " + response.status);
                 //console.log("Data: " + response.data);
                 $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
-                $scope.formularioDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
+                $scope.modificarDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
             });
     };
 
     /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-     * Envía el objeto persona al archivo formulario-donante.php para modificar
+     * Envía el objeto persona al archivo modificar-donante.php para modificar
      * una persona.
      */
     $scope.modificarPersona = function() {
         //console.log("Persona para modificar: " + $scope.persona.nombre);
-        $http.post("formulario-donante/formulario-donante.php?action=modificar-persona", $scope.persona)
+        $http.post("modificar-donante/modificar-donante.php?action=modificar-persona", $scope.persona)
             .then(function(response) {
                 //console.log("Respuesta: " + response.status);
                 //console.log("Data: " + response.data);
