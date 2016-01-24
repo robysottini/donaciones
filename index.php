@@ -47,10 +47,10 @@
 
         <!-- Directivas personalizadas
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="donantes/donantes.js"></script>
         <script src="encabezado/encabezado.js"></script>
         <script src="nuevo-donante/nuevo-donante.js"></script>
         <script src="modificar-donante/modificar-donante.js"></script>
+        <script src="donantes/donantes.js"></script>
         <script src="formulario-donacion/formulario-donacion.js"></script>
         <script src="formulario-donante-donacion/formulario-donante-donacion.js"></script>
         <!-- Controlador datepicker-personalizado. -->
