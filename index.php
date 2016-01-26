@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="es-AR" ng-app="mainApp"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es-AR" ng-app="donacionesApp"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <!-- Indica que se use el motor de renderizado más nuevo que tenga el cliente instalado --> 
