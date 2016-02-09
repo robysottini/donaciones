@@ -4915,9 +4915,9 @@ angular.module('ui.bootstrap.tooltip', ['ui.bootstrap.position', 'ui.bootstrap.s
    *     $tooltipProvider.options( { placement: 'left' } );
    *   });
    */
-	this.options = function(value) {
-		angular.extend(globalOptions, value);
-	};
+  this.options = function(value) {
+    angular.extend(globalOptions, value);
+  };
 
   /**
    * This allows you to extend the set of trigger mappings available. E.g.:
@@ -7687,7 +7687,7 @@ angular.module('ui.bootstrap.typeahead')
         //with typeahead-specific data (matches, query etc.)
         var scope = originalScope.$new();
         var offDestroy = originalScope.$on('$destroy', function() {
-			    scope.$destroy();
+          scope.$destroy();
         });
         scope.$on('$destroy', offDestroy);
 
@@ -8134,7 +8134,7 @@ angular.module("template/accordion/accordion-group.html", []).run(["$templateCac
     "    </h4>\n" +
     "  </div>\n" +
     "  <div class=\"panel-collapse collapse\" uib-collapse=\"!isOpen\">\n" +
-    "	  <div class=\"panel-body\" ng-transclude></div>\n" +
+    "    <div class=\"panel-body\" ng-transclude></div>\n" +
     "  </div>\n" +
     "</div>\n" +
     "");
@@ -8244,14 +8244,14 @@ angular.module("template/datepicker/month.html", []).run(["$templateCache", func
 angular.module("template/datepicker/popup.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("template/datepicker/popup.html",
     "<ul class=\"dropdown-menu\" dropdown-nested ng-if=\"isOpen\" style=\"display: block\" ng-style=\"{top: position.top+'px', left: position.left+'px'}\" ng-keydown=\"keydown($event)\" ng-click=\"$event.stopPropagation()\">\n" +
-    "	<li ng-transclude></li>\n" +
-    "	<li ng-if=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n" +
-    "		<span class=\"btn-group pull-left\">\n" +
-    "			<button type=\"button\" class=\"btn btn-sm btn-info\" ng-click=\"select('today')\" ng-disabled=\"isDisabled('today')\">{{ getText('current') }}</button>\n" +
-    "			<button type=\"button\" class=\"btn btn-sm btn-danger\" ng-click=\"select(null)\">{{ getText('clear') }}</button>\n" +
-    "		</span>\n" +
-    "		<button type=\"button\" class=\"btn btn-sm btn-success pull-right\" ng-click=\"close()\">{{ getText('close') }}</button>\n" +
-    "	</li>\n" +
+    "  <li ng-transclude></li>\n" +
+    "  <li ng-if=\"showButtonBar\" style=\"padding:10px 9px 2px\">\n" +
+    "    <span class=\"btn-group pull-left\">\n" +
+    "      <button type=\"button\" class=\"btn btn-sm btn-info\" ng-click=\"select('today')\" ng-disabled=\"isDisabled('today')\">{{ getText('current') }}</button>\n" +
+    "      <button type=\"button\" class=\"btn btn-sm btn-danger\" ng-click=\"select(null)\">{{ getText('clear') }}</button>\n" +
+    "    </span>\n" +
+    "    <button type=\"button\" class=\"btn btn-sm btn-success pull-right\" ng-click=\"close()\">{{ getText('close') }}</button>\n" +
+    "  </li>\n" +
     "</ul>\n" +
     "");
 }]);

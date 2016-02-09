@@ -15,16 +15,16 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="js/vendor/angular.js"></script>
         <script src="js/vendor/angular-animate.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/main.module.js"></script>
 
         <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.js)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="js/vendor/ui-bootstrap-tpls.js"></script>
-        <script src="js/vendor/angular-sanitize.min.js"></script>
 
+        <!-- Requerido por algunos módulos de AngularStrap -->
+        <script src="js/vendor/angular-sanitize.js"></script>
         <!-- Código JavaScript de la librería AngularStrap -->
-        <script src="js/vendor/angular-strap.js"></script>
-        
+        <script src="js/vendor/angular-strap.js"></script>        
         <!-- Plantillas en línea HTML por defecto usadas por las directivas de AngularStrap -->
         <script src="js/vendor/angular-strap.tpl.js"></script>
 
@@ -45,16 +45,24 @@
         <!-- Normalize: Alternativa HTML5 a los resets de CSS. -->
         <link rel="stylesheet" href="css/normalize.css">
 
+        <!-- Controladores
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="datepicker-personalizado/datepicker-personalizado.controller.js"></script>
+        <script src="donantes/donantes.controller.js"></script>
+        <script src="formulario-donacion/formulario-donacion.controller.js"></script>
+        <script src="formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
+        <script src="modificar-donante/modificar-donante.controller.js"></script>
+        <script src="nuevo-donante/nuevo-donante.controller.js"></script>
+
         <!-- Directivas personalizadas
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="encabezado/encabezado.js"></script>
-        <script src="nuevo-donante/nuevo-donante.js"></script>
-        <script src="modificar-donante/modificar-donante.js"></script>
-        <script src="donantes/donantes.js"></script>
-        <script src="formulario-donacion/formulario-donacion.js"></script>
-        <script src="formulario-donante-donacion/formulario-donante-donacion.js"></script>
-        <!-- Controlador datepicker-personalizado. -->
-        <script src="datepicker-personalizado/datepicker-personalizado.js"></script>
+        <script src="datepicker-personalizado/datepicker-personalizado.directive.js"></script>
+        <script src="donantes/donantes.directive.js"></script>
+        <script src="encabezado/encabezado.directive.js"></script>
+        <script src="formulario-donacion/formulario-donacion.directive.js"></script>
+        <script src="formulario-donante-donacion/formulario-donante-donacion.directive.js"></script>
+        <script src="modificar-donante/modificar-donante.directive.js"></script>
+        <script src="nuevo-donante/nuevo-donante.directive.js"></script>
 
         <!-- Plugins
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -69,7 +77,7 @@
         <link rel="author" href="humans.txt" />
 
     </head>
-    <body ng-controller="MainController" ng-cloak>
+    <body ng-cloak>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->

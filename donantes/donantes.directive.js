@@ -1,0 +1,18 @@
+/**
+ * @desc Directiva personalizada.
+ * @author Roberto Sottini <robysottini@gmail.com>
+ */
+(function() {
+    'use strict';
+
+    angular
+    .module('donacionesApp')
+    .directive('donantes', donantes);
+
+	function donantes() {
+	    return {
+	        restrict: 'E', // Creo el nuevo elemento (E: Element) con nombre 'donantes'.
+	        templateUrl: 'donantes/donantes.html'
+	    }
+	}
+})();

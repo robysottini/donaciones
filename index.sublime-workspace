@@ -1,0 +1,1247 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"log",
+				"$log	AngularJS"
+			],
+			[
+				"per_codigo_are",
+				"per_codigo_area"
+			],
+			[
+				"per_ar",
+				"per_codigo_area"
+			],
+			[
+				"ng-c",
+				"ng-controller	AngularJS"
+			],
+			[
+				"resour",
+				"angular: $resource"
+			],
+			[
+				"scede",
+				"$sceDelegateProvider	AngularJS"
+			],
+			[
+				"$sced",
+				"$sceDelegateProvider	AngularJS"
+			],
+			[
+				"frec",
+				"frecuenciaDeDonacion"
+			],
+			[
+				"PA",
+				"parametros"
+			],
+			[
+				"formul",
+				"formulario-donante"
+			],
+			[
+				"selec",
+				"SELECT"
+			],
+			[
+				"from",
+				"FROM"
+			],
+			[
+				"s",
+				"sSQL"
+			],
+			[
+				"pg_fet",
+				"pg_fetch_array"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"border",
+				"border-width"
+			],
+			[
+				"T",
+				"type	Attr"
+			],
+			[
+				"id",
+				"idUnico"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"ng-s",
+				"ng-show	AngularJS"
+			],
+			[
+				"mar",
+				"marcador"
+			],
+			[
+				"lo",
+				"longitude"
+			],
+			[
+				"ciuda",
+				"ciudad"
+			],
+			[
+				"l",
+				"latitude"
+			],
+			[
+				"adul",
+				"adultos"
+			],
+			[
+				"adult",
+				"adultos"
+			],
+			[
+				"fel",
+				"flexibilidades"
+			],
+			[
+				"felx",
+				"flexibilidades"
+			],
+			[
+				"moned",
+				"monedas"
+			],
+			[
+				"stat",
+				"statusText"
+			],
+			[
+				"Sta",
+				"status"
+			],
+			[
+				"ciudad",
+				"ciudades"
+			],
+			[
+				"ciudades",
+				"ciudades"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"urlCons",
+				"urlConstante3"
+			],
+			[
+				"ur",
+				"urlConstante3"
+			],
+			[
+				"url",
+				"urlConstante2"
+			],
+			[
+				"fecha",
+				"fechaRegreso"
+			],
+			[
+				"flexibi",
+				"flexibilidad"
+			],
+			[
+				"ciu",
+				"ciudadOrigen"
+			],
+			[
+				"fehca",
+				"fechaPartida"
+			],
+			[
+				"adu",
+				"adulto"
+			],
+			[
+				"flex",
+				"flexibilidades"
+			],
+			[
+				"fromc",
+				"fromCity1"
+			],
+			[
+				"ciud",
+				"ciudadOrigen"
+			],
+			[
+				"vuelo",
+				"vueloOrigen"
+			],
+			[
+				"urlCon",
+				"urlConstante2"
+			],
+			[
+				"pre",
+				"preferencias"
+			],
+			[
+				"anoli",
+				"anoliqlic"
+			],
+			[
+				"idp",
+				"idpro"
+			],
+			[
+				"ano",
+				"anoliqlic"
+			],
+			[
+				"mon",
+				"moneda"
+			],
+			[
+				"urlC",
+				"urlConstante1"
+			],
+			[
+				"urlcon",
+				"urlConstante2"
+			],
+			[
+				"var",
+				"varcharCaseSensitive"
+			],
+			[
+				"idc",
+				"idcon"
+			],
+			[
+				"conc",
+				"conceptos"
+			],
+			[
+				"fehc",
+				"fechaPartida"
+			],
+			[
+				"ori",
+				"ciudadOrigen"
+			],
+			[
+				"SO",
+				"SO1"
+			],
+			[
+				"fec",
+				"fechaRegreso"
+			],
+			[
+				"part",
+				"fechaPartida"
+			],
+			[
+				"const",
+				"urlConstante2"
+			],
+			[
+				"urlc",
+				"urlConstante1"
+			],
+			[
+				"ad",
+				"adulto"
+			],
+			[
+				"ciduad",
+				"ciudadDestino"
+			],
+			[
+				"fe",
+				"fechaRegreso"
+			],
+			[
+				"sol",
+				"soloIda"
+			],
+			[
+				"er",
+				"erroresEncontrados"
+			],
+			[
+				"err",
+				"error"
+			],
+			[
+				"ng-clo",
+				"ng-cloak	AngularJS"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"orige",
+				"origenSeleccionado"
+			],
+			[
+				"mone",
+				"monedas"
+			],
+			[
+				"va",
+				"valor"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"clase",
+				"clases"
+			],
+			[
+				"ng-op",
+				"ng-options	AngularJS"
+			],
+			[
+				"val",
+				"valueOrigen"
+			],
+			[
+				"Tra",
+				"Transatlántica"
+			],
+			[
+				"R",
+				"RT"
+			],
+			[
+				"carg",
+				"cargos_conceptos"
+			],
+			[
+				"t",
+				"true"
+			],
+			[
+				"nom",
+				"nombretipest"
+			],
+			[
+				"idt",
+				"idcatcar"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"ng-i",
+				"ng-if	AngularJS"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"nombr",
+				"nombre2"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"D",
+				"DBV"
+			],
+			[
+				"Z",
+				"ZAG"
+			],
+			[
+				"BU",
+				"BUD"
+			],
+			[
+				"V",
+				"VNO"
+			],
+			[
+				"No",
+				"Noruega"
+			],
+			[
+				"H",
+				"HEL"
+			],
+			[
+				"origen",
+				"origenes"
+			],
+			[
+				"P",
+				"PUQ"
+			],
+			[
+				"$sc",
+				"$scope	AngularJS"
+			],
+			[
+				"ng-in",
+				"ng-init	AngularJS"
+			],
+			[
+				"ng-r",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"namee",
+				"nameest"
+			],
+			[
+				"nam",
+				"nameest"
+			],
+			[
+				"curr",
+				"curriculumvitae"
+			],
+			[
+				"name",
+				"namecv"
+			],
+			[
+				"NOMBR",
+				"nombretcman"
+			],
+			[
+				"acc",
+				"acciones"
+			],
+			[
+				"A",
+				"Artículo"
+			],
+			[
+				"pro",
+				"provincia"
+			],
+			[
+				"h",
+				"history"
+			],
+			[
+				"esta",
+				"estado"
+			],
+			[
+				"m",
+				"mesliqlic"
+			],
+			[
+				"ds",
+				"desdelic"
+			],
+			[
+				"con",
+				"concepto"
+			],
+			[
+				"ca",
+				"categoría"
+			],
+			[
+				"Seg",
+				"Segunda"
+			],
+			[
+				"ob",
+				"observación"
+			],
+			[
+				"plaf",
+				"plafin"
+			],
+			[
+				"plaot",
+				"plaotroobs"
+			],
+			[
+				"pla",
+				"plaotroobs"
+			],
+			[
+				"plaseg",
+				"plasegobs"
+			],
+			[
+				"plap",
+				"plapriobs"
+			],
+			[
+				"anti",
+				"antig_realperhis"
+			],
+			[
+				"idca",
+				"idcatcar"
+			],
+			[
+				"c",
+				"civil"
+			],
+			[
+				"idest",
+				"idestciv"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 374.0,
+		"last_filter": "them",
+		"selected_items":
+		[
+			[
+				"them",
+				"Themr: Next theme"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			],
+			[
+				"minimap",
+				"View: Toggle Minimap"
+			],
+			[
+				"toggle commen",
+				"Toggle Block Comment"
+			],
+			[
+				"toggle come",
+				"Toggle Comment"
+			],
+			[
+				"toggle comme",
+				"Toggle Comment"
+			],
+			[
+				"sidebar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"colorscheme",
+				"ColorSchemeSelector: Select Color Scheme"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"scss",
+				"Set Syntax: SCSS"
+			],
+			[
+				"themr",
+				"Themr: List themes"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"satisf",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"d",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control:",
+				"Package Control: Disable Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"disco",
+				"Package Control: Discover Packages"
+			],
+			[
+				"lint",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"linter",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: sftp",
+				"Package Control: Satisfy Dependencies"
+			],
+			[
+				"packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 498.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"which linter",
+			"hash -r",
+			"view.run_command(\"jshint\")",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/donaciones/index.php",
+		"/var/www/html/angular-seed-master/bower.json",
+		"/home/roby/Documentos/DPOSS/Haberes/Días de LAO por agente: restantes, no trabajados y estados.sql",
+		"/var/log/apache2/error.log",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlSolicitudLicencia.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/angular/angular.js",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/angular-sanitize/angular-sanitize.js",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/angular-sanitize/angular-sanitize.min.js",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/js/vendor/angular-strap.tpl.min.js",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/js/vendor/angular-strap.min.js",
+		"/var/www/html/ui-router-tabs-master/example/index.html",
+		"/var/www/html/ui-router-tabs-master/bower.json",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/frmSolicitudLicencia.php",
+		"/usr/share/X11/xorg.conf.d/50-synaptics.conf",
+		"/home/roby/Documentos/Programación web/Herramientas y librerías/Boilerplate/html5-boilerplate_v5.3.0/index.html",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/menus/menuHaberes.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/frmDynamicABM.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms/js_controllers/frmCargaManual.js",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/index.php",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/js/app.js",
+		"/home/roby/Documentos/DPOSS/Haberes3/git/h3/2015-02-13 backup/js/app.js",
+		"/var/www/html/donaciones/modificar-donante/modificar-donante.html",
+		"/var/www/html/donaciones/nuevo-donante/nuevo-donante.html",
+		"/var/www/html/donaciones/modificar-donante/modificar-donante.js",
+		"/var/www/html/donaciones/nuevo-donante/nuevo-donante.js",
+		"/var/www/html/donaciones/modificar-donante/modificar-donante.php",
+		"/var/www/html/donaciones/formulario-donacion/formulario-donacion.js",
+		"/var/www/html/donaciones/formulario-donacion/formulario-donacion.html",
+		"/var/www/html/donaciones/formulario-donacion/formulario-donacion.php",
+		"/var/www/html/donaciones/nuevo-donante/nuevo-donante.php",
+		"/var/www/html/donaciones/formulario-donante/formulario-donante.php",
+		"/var/www/html/donaciones/formulario-donante/formulario-donante.js",
+		"/var/www/html/donaciones/formulario-donante/formulario-donante.html",
+		"/var/log/apache2/error.log.1",
+		"/var/www/html/donaciones/datepicker-personalizado/datepicker-personalizado.html",
+		"/var/www/html/donaciones/datepicker-personalizado/datepicker-personalizado.js",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reporteDisposicionLicencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmGenDisposicion_licencia.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlgendisposicion_licencia.php",
+		"/var/www/html/datepicker/paises/paises.js",
+		"/var/www/html/datepicker/index.html",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/forms/frmABMGeneral.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/forms/js_controllers/frmABMGeneral.js",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/js/app.js",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes3/forms/frmABMCargaManual.php",
+		"/var/www/html/typeahead/index.html",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu.inc.php",
+		"/var/www/html/donaciones/js/vendor/prettyprint.js",
+		"/var/www/html/donaciones/donantes/donantes.php",
+		"/var/www/html/typeahead/paises/paises.js",
+		"/var/www/html/donaciones/js/main.js",
+		"/var/www/html/despegar_servicios/ciudades.json",
+		"/var/www/html/typeahead/js/vendor/node_modules/angular-strap/docs/1.0/css/docs.css",
+		"/var/www/html/typeahead/css/docs.min.css",
+		"/var/www/html/typeahead/js/vendor/angular-animate.js",
+		"/var/www/html/donaciones/js/vendor/angular-strap.tpl.js",
+		"/var/www/html/animaciones/index.html",
+		"/var/www/html/donaciones/css/animaciones.css",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/Ejercicios/Ejercicio 2/index.html",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_cv.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_lao.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu2.inc.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_cohen.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_haberes.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_plantas.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_catastro.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_developers.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/menu_personal.inc",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/back20080508/menu.inc.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/classes/CMenu.php",
+		"/var/www/html/donaciones/donantes/donantes.html",
+		"/var/www/html/donaciones/donantes/donantes.js",
+		"/var/www/html/animaciones/paises/paises.js",
+		"/var/www/html/animaciones/css/animaciones.css",
+		"/var/www/html/animaciones/js/animation.js",
+		"/var/www/html/animaciones/js/vendor/angular-animate.js",
+		"/var/www/html/animaciones/js/vendor/angular.js",
+		"/var/www/html/animaciones/animaciones/animaciones.js",
+		"/var/www/html/animaciones/animaciones.js",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/Ejercicios/Ejercicio 2/js/directory.js",
+		"/var/www/html/animaciones/contralador.js",
+		"/var/www/html/animaciones/animations.css",
+		"/var/www/html/animaciones/main.css",
+		"/var/www/html/donaciones/css/main.css",
+		"/run/user/1000/gvfs/smb-share:server=192.168.10.200,share=backups/obreque.txt",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/Ejercicios/Ejercicio 2/pais.html",
+		"/home/roby/Documentos/Afip reintegro 35%/consultaMisRetenciones.do.txt",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmGenLicencia_art83.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reportSolicitudLicencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmReportResumenLicencia.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/frmSolicitudLicencia.xml.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/ctrlsolicitudlicencia.php",
+		"/run/user/1000/gvfs/smb-share:server=191.100.100.50,share=haberes2/controller/reportResumenLicencia.php",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/index.html",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/js/main.js",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/css/main.css",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/index.html",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/css/main.css",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/js/directory.js",
+		"/home/roby/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio original/js/main.js",
+		"/var/www/html/donaciones/js/vendor/angular.js",
+		"/var/www/html/donaciones/tabs-personalizado/datepicker-personalizado.js",
+		"/var/www/html/donaciones/tabs-personalizado/datepicker-personalizado.html",
+		"/var/www/html/donaciones/css/bootstrap.css",
+		"/home/roby/Descargas/angular (1).js",
+		"/var/www/html/donaciones/css/bootstrapU.css",
+		"/var/www/html/donaciones/css/angular-motion.min.css",
+		"/var/www/html/donaciones/js/vendor/ui-bootstrap-tpls.min.js",
+		"/var/www/html/donaciones/js/vendor/angular-strap.min.js",
+		"/var/www/html/donaciones/js/vendor/angular-strap.tpl.min.js",
+		"/var/www/html/donaciones/doc/usage.md",
+		"/var/www/html/donaciones/doc/html.md",
+		"/var/www/html/donaciones/js/vendor/bootstrap.js",
+		"/var/www/html/donaciones/js/vendor/bootstrap.min.js",
+		"/home/roby/.cache/.fr-BhEiQb/bootstrap-3.3.6-dist/css/bootstrap.css.map",
+		"/home/roby/.cache/.fr-F1cTS9/bootstrap-3.3.6-dist/css/bootstrap-theme.css.map",
+		"/home/roby/.cache/.fr-uoX3SL/bootstrap-3.3.6-dist/js/npm.js",
+		"/home/roby/.cache/.fr-3FqW4l/angular-1.4.8/angular-loader.js",
+		"/home/roby/.cache/.fr-prWzHT/angular-1.4.8/angular.min.js.map",
+		"/home/roby/.cache/.fr-GITo4Z/angular-1.4.8/angular.js",
+		"/home/roby/.cache/.fr-EkRSus/angular-1.4.8/version.txt",
+		"/home/roby/.cache/.fr-lAhg3g/angular-1.4.8/version.json",
+		"/home/roby/.cache/.fr-0Z6kKc/angular-1.4.8/errors.json",
+		"/var/www/html/donaciones/js/vendor/angular.min.js",
+		"/var/www/html/donaciones/datepicker/datepicker.js",
+		"/var/www/html/donaciones/datepicker/datepicker.html",
+		"/var/www/html/donaciones/formulario-donante/datepicker.js",
+		"/var/www/html/despegar_directivas/js/vendor/ui-bootstrap-datepicker.js"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/var/www/html",
+			"/var/www/html/angular-seed-master",
+			"/home/roby/Documentos/DPOSS/Haberes3/git/h3/",
+			"/home/roby/Documentos/DPOSS/Haberes3/git/h3/forms",
+			"/var/www/html/donaciones",
+			"/var/www/html/donaciones/donantes",
+			"/var/www/html/donaciones",
+			"/var/www/html/angular-seed-master/app",
+			"/var/www/html/donaciones",
+			"/var/www/html/",
+			"/var/www/html/donaciones_angularstrap",
+			"/var/www/html/despegar_servicios",
+			"/var/www/html/despegar_directivas",
+			"/var/www/html/despegar_servicios",
+			"/var/www/html/donaciones",
+			"/var/www/html/despegar_servicios",
+			"/var/www/html/despegar_servicios/js",
+			"/home/roby/Documentos/Clases de HTML5/Dante/Webs",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"2015",
+			"2014",
+			"todo",
+			"console",
+			"formulario",
+			"obtenerDiasRestantes",
+			"dias_restantes",
+			"diasres",
+			"0",
+			"disponibles",
+			"dias_disp",
+			"anosolic.",
+			"_REQUEST",
+			"idper",
+			"$_REQUEST['anosolic']",
+			"anosolic",
+			"$http",
+			"anosolic",
+			"\"",
+			"anosolic",
+			"Anosolic",
+			"anosolic",
+			"dias",
+			"obtenerDiasRestantes",
+			"obtener-dias-restantes",
+			"anos",
+			"\"angular/",
+			"\"angular/angular.js",
+			"angular/angular.js",
+			"angular-sanitize/",
+			"angular-bootstrap/",
+			"angular-bootstrap",
+			"ui-bootstrap",
+			"sanit",
+			"ano",
+			"idper",
+			"\":",
+			"\"",
+			"anosolic",
+			"matrizAnos",
+			"grupoSanguineo",
+			"matrizAnos",
+			"arregloAnos",
+			"matriz",
+			"[",
+			":",
+			"\" ",
+			"ano",
+			"arregloAnos",
+			"formulario",
+			"_REQUEST",
+			"\".$_REQUEST['anosolic'].\"",
+			"diasRestantes",
+			"_REQUEST",
+			"ano",
+			"resultToArray",
+			"obtener",
+			"diasRestantes",
+			"Respuesta",
+			"\"",
+			"get(\"",
+			"persona2",
+			"persona",
+			"Persona",
+			"persona",
+			"Persona",
+			"persona",
+			"Persona",
+			"persona",
+			"persona2",
+			"numdocper",
+			"strap",
+			"module",
+			"'toastr'",
+			"../bower_components/",
+			"'ngAnimate'",
+			"ngAnimate'",
+			"ngAnimate",
+			"strap",
+			"persona",
+			"Persona",
+			"persona",
+			"Persona",
+			"persona",
+			"mostrarDiasRestantes",
+			"selec",
+			"matrizPersonas",
+			"personaSeleccionada",
+			"Seleccionada",
+			"ciudadDestino",
+			"$log",
+			"ciudades",
+			"rowPersonas",
+			"persona",
+			"moderniz",
+			"FrmSolicitudLicenciaController",
+			"frmConceptos",
+			"frmabmcargamanual.php",
+			"frmabmcargamanual",
+			"abmcar",
+			"php",
+			"){",
+			"Haberesapp",
+			"HaberesCtrl",
+			"controller",
+			"HaberesCtrl",
+			"controller",
+			".js",
+			"type=\"application/x-javascript\" ",
+			"frmABMCargaManual.js",
+			"FrmSolicitudLicencia",
+			"FrmSolicitudLicenciaController",
+			"formulario",
+			"controll",
+			"nuevoDonanteController",
+			"nuevodonantecontroller",
+			"nuevo",
+			"formulario",
+			"{\n",
+			"formulario",
+			"Formulario",
+			"formulario",
+			"Formulario",
+			"formularioDonante",
+			"Formulario",
+			"formulario-donante",
+			"formulario",
+			"Formulario"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"matrizPersonas",
+			"nuevo",
+			"{",
+			"    ",
+			"Donantes",
+			"    ",
+			"rowPersonas",
+			"    ",
+			"donante-donacion",
+			"JSON",
+			"Donantes",
+			"    ",
+			"\"",
+			"    ",
+			"\"",
+			"Controller",
+			"Controller\n	",
+			",\n	",
+			"'",
+			"",
+			"    ",
+			"\n",
+			"",
+			"\n            –––––––––––––––––––––––––––––––––––––––––––––––––– -->",
+			", ",
+			"</td>",
+			"<td>",
+			"destinos[j]",
+			"{\n",
+			"[\n",
+			"\n}",
+			"\n]",
+			",\n",
+			": ",
+			"\n}",
+			"\n]",
+			"{\n",
+			"[\n",
+			",\n",
+			"\n}",
+			"\n]",
+			"{\n",
+			"[\n",
+			",\n",
+			": ",
+			"\n{",
+			"\n[",
+			"}\n",
+			"]\n",
+			",\n",
+			": ",
+			" === ",
+			"===",
+			": ",
+			"}\n",
+			"]\n",
+			"\n[",
+			"\n{",
+			",\n",
+			"\n}",
+			"}\n",
+			"]\n",
+			"}\n",
+			"{\n",
+			"[\n",
+			",\n",
+			": ",
+			"{\n",
+			"]\n",
+			"}\n",
+			"[\n",
+			",\n",
+			": ",
+			"{\n",
+			"}\n",
+			"]\n",
+			"[\n",
+			":\n",
+			"{\n",
+			"[\n",
+			"}\n",
+			"]\n",
+			",\n",
+			": ",
+			"]\n",
+			"}\n",
+			"{\n",
+			"[\n",
+			",\n",
+			": ",
+			",\n",
+			"{\n",
+			"[\n",
+			"]\n",
+			"}\n",
+			",\n",
+			"}\n",
+			"]\n",
+			":\n",
+			":\n	",
+			"}\n	",
+			"]\n	",
+			",\n",
+			"}\n",
+			"]\n",
+			"}\n	",
+			": ",
+			"}\n",
+			"{\n",
+			"[\n",
+			",\n",
+			"}\n",
+			"]\n",
+			"[\n",
+			"{\n",
+			": ",
+			":",
+			": ",
+			", \n",
+			": ",
+			"}\n",
+			"{\n",
+			"[\n",
+			",\n",
+			": ",
+			"{\n",
+			"}\n",
+			"]\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"cuida",
+				"ciudades.json"
+			],
+			[
+				"mai",
+				"~/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/css/main.css"
+			],
+			[
+				"ma",
+				"~/Videos/Cursos de informática/AngularJS/AngularJS for Everyone - LevelUpTuts - Scott Tolinski/ejercicio/ejercicio originalCompleto/css/main.css"
+			],
+			[
+				"",
+				"fonts/glyphicons-halflings-regular.svg"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 236.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
