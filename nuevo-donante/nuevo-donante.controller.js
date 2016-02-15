@@ -7,17 +7,16 @@
  * @author Roberto Sottini <robysottini@gmail.com>
  * @version 1.0
  */
-
-// Nombre de directiva: se usa camelcase.
-// Nombre de la etiqueta: se usa guión medio.
 (function() {
     'use strict';
 
     angular
-    .module('donacionesApp')
-    .controller('NuevoDonanteController', NuevoDonanteController);
+        .module('donacionesApp.nuevoDonante')
+        .controller('NuevoDonanteController', NuevoDonanteController);
 
-    function NuevoDonanteController($scope, $filter, $http) {
+    NuevoDonanteController.$inject = ['$scope', '$http'];
+
+    function NuevoDonanteController($scope, $http) {
         $scope.matrizGruposSanguineos = [];
         $scope.matrizFrecuenciasDeDonacion = [];
         $scope.persona = {

@@ -11,10 +11,12 @@
 (function() {
 
     angular
-        .module('donacionesApp')
+        .module('donacionesApp.formularioDonanteDonacion')
         .controller('FormularioDonanteDonacionController', FormularioDonanteDonacionController);
 
-    function FormularioDonanteDonacionController($scope, $filter, $http) {
+    FormularioDonanteDonacionController.$inject = ['$scope', '$http'];
+
+    function FormularioDonanteDonacionController($scope, $http) {
         $scope.matrizGruposSanguineos = [];
         $scope.matrizFrecuenciasDeDonacion = [];
         $scope.rowDonantes = [];

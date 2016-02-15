@@ -8,8 +8,8 @@
     'use strict';
 
     angular
-    .module('donacionesApp')
-    .directive('formularioDonacion', formularioDonacion);
+        .module('donacionesApp.formularioDonacion')
+        .directive('formularioDonacion', formularioDonacion);
 
     function formularioDonacion() {
         return {

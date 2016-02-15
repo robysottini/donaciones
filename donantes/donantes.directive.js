@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-    .module('donacionesApp')
+    .module('donacionesApp.donantes')
     .directive('donantes', donantes);
 
 	function donantes() {

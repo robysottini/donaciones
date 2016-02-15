@@ -12,7 +12,7 @@
     'use strict';
 
     angular
-    .module('donacionesApp')
+    .module('donacionesApp.modificarDonante')
     .directive('modificarDonante', modificarDonante);
 
     function modificarDonante() {

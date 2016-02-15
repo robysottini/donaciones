@@ -11,11 +11,10 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Mis controladores
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <!-- AngularJS
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->        
         <script src="js/vendor/angular.js"></script>
         <script src="js/vendor/angular-animate.js"></script>
-        <script src="js/main.module.js"></script>
 
         <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.js)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -36,6 +35,10 @@
         <link rel="stylesheet" href="css/libs.min.css">
         <link rel="stylesheet" href="css/docs.min.css">
 
+        <!-- Plugins
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="js/plugins.js"></script>
+
         <!-- Librerías CSS de terceras partes
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <!-- Angular Motion: Animaciones CSS3. -->
@@ -45,36 +48,60 @@
         <!-- Normalize: Alternativa HTML5 a los resets de CSS. -->
         <link rel="stylesheet" href="css/normalize.css">
 
-        <!-- Controladores
+        <!-- donacionesApp (Proceso de bootstrapping)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="js/donacionesApp.module.js"></script>
+
+        <!-- datepicker-personalizado
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="datepicker-personalizado/datepicker-personalizado.module.js"></script>
         <script src="datepicker-personalizado/datepicker-personalizado.controller.js"></script>
-        <script src="donantes/donantes.controller.js"></script>
-        <script src="formulario-donacion/formulario-donacion.controller.js"></script>
-        <script src="formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
-        <script src="modificar-donante/modificar-donante.controller.js"></script>
-        <script src="nuevo-donante/nuevo-donante.controller.js"></script>
-
-        <!-- Directivas personalizadas
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="datepicker-personalizado/datepicker-personalizado.directive.js"></script>
-        <script src="donantes/donantes.directive.js"></script>
-        <script src="encabezado/encabezado.directive.js"></script>
-        <script src="formulario-donacion/formulario-donacion.directive.js"></script>
-        <script src="formulario-donante-donacion/formulario-donante-donacion.directive.js"></script>
-        <script src="modificar-donante/modificar-donante.directive.js"></script>
-        <script src="nuevo-donante/nuevo-donante.directive.js"></script>
 
-        <!-- Plugins
+        <!-- donantes
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="js/plugins.js"></script>
+        <script src="donantes/donantes.module.js"></script>
+        <script src="donantes/donantes.controller.js"></script>
+        <script src="donantes/donantes.directive.js"></script>
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- encabezado
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="encabezado/encabezado.module.js"></script>
+        <script src="encabezado/encabezado.directive.js"></script>
+
+        <!-- encabezado
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="formulario-donacion/formulario-donacion.module.js"></script>
+        <script src="formulario-donacion/formulario-donacion.controller.js"></script>
+        <script src="formulario-donacion/formulario-donacion.directive.js"></script>
+
+        <!-- formulario-donante
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="formulario-donante-donacion/formulario-donante-donacion.module.js"></script>
+        <script src="formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
+        <script src="formulario-donante-donacion/formulario-donante-donacion.directive.js"></script>
+
+        <!-- modificar-donante
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="modificar-donante/modificar-donante.module.js"></script>
+        <script src="modificar-donante/modificar-donante.controller.js"></script>
+        <script src="modificar-donante/modificar-donante.directive.js"></script>
+
+        <!-- nuevo-donante
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="nuevo-donante/nuevo-donante.module.js"></script>
+        <script src="nuevo-donante/nuevo-donante.controller.js"></script>
+        <script src="nuevo-donante/nuevo-donante.directive.js"></script>
 
         <!-- Estilos personalizados
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/animaciones.css">
         <link rel="author" href="humans.txt" />
+
+        <!-- Ícono
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     </head>
     <body ng-cloak>

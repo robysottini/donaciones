@@ -12,11 +12,13 @@
             'ui.bootstrap', 
             'ngSanitize', 
             'mgcrea.ngStrap', 
-            'smart-table'
+            'smart-table',
+            'donacionesApp.datepickerPersonalizado',
+            'donacionesApp.donantes',
+            'donacionesApp.encabezado',
+            'donacionesApp.formularioDonacion',
+            'donacionesApp.formularioDonanteDonacion',
+            'donacionesApp.modificarDonante',
+            'donacionesApp.nuevoDonante'
         ]);
-        /*
-        .controller('MainController', MainController);
-
-    function MainController($scope, $filter, $http) {}
-    */
 })();

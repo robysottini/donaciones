@@ -6,8 +6,10 @@
     'use strict';
 
     angular
-        .module('donacionesApp')
+        .module('donacionesApp.datepickerPersonalizado')
         .controller('DatepickerPersonalizadoController', DatepickerPersonalizadoController);
+
+    DatepickerPersonalizadoController.$inject = ['$scope'];
 
     function DatepickerPersonalizadoController($scope) {
         $scope.today = function() {

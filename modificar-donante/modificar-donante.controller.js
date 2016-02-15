@@ -12,10 +12,12 @@
     'use strict';
 
     angular
-    .module('donacionesApp')
+    .module('donacionesApp.modificarDonante')
     .controller('ModificarDonanteController', ModificarDonanteController);
 
-    function ModificarDonanteController ($scope, $filter, $http) {
+    ModificarDonanteController.$inject = ['$scope', '$http'];
+
+    function ModificarDonanteController ($scope, $http) {
         $scope.matrizGruposSanguineos = [];
         $scope.matrizFrecuenciasDeDonacion = [];
         $scope.matrizPersonas = [];

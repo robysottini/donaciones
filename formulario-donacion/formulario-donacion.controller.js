@@ -14,10 +14,12 @@
     'use strict';
 
     angular
-    .module('donacionesApp')
+    .module('donacionesApp.formularioDonacion')
     .controller('FormularioDonacionController', FormularioDonacionController);
 
-    function FormularioDonacionController($scope, $filter, $http) {
+    FormularioDonacionController.$inject = ['$scope', '$http'];
+
+    function FormularioDonacionController($scope, $http) {
         // Inicializo el 
         $scope.donacion = {
             /*
