@@ -14,7 +14,7 @@
 
     function encabezado() {
         return {
-            restrict: 'E', // Creo el nuevo elemento (E: Element) con nombre "encabezado".
+            restrict: 'E', // Creo el nuevo elemento (E: Element).
             templateUrl: 'app/encabezado/encabezado.html'
         }
     }
