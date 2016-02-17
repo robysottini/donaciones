@@ -1,8 +1,5 @@
 /**
- * Módulo FormularioDonacion con directiva personalizada.
- * Acá se agrega el código JavaScript del componente de UI-Bootrap que se
- * necesite, como el código para Tabs.
- * También se llaman los archivos php que interactúan con la base de datos.
+ * @desc Controlador FormularioDonacion.
  * 
  * @author Roberto Sottini <robysottini@gmail.com>
  * @version 1.0
@@ -52,12 +49,13 @@
          * Solicita todas las personas al archivo formulario-donacion.php y las 
          * guarda en el array matrizPersonas.
          */
-        $http.get('app/formulario-donacion/formulario-donacion.php?action=obtener-personas')
+        $http
+            .get('app/formulario-donacion/formulario-donacion.php?action=obtener-personas')
             .success(function(response) {
                 $scope.matrizPersonas = response;
                 //console.log(JSON.stringify($scope.matrizPersonas, null, 2));
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donacion/formulario-donacion.php?action=obtener-personas. Status: ' + status + '.');
         });
         
@@ -69,7 +67,8 @@
             $scope.donacion.persona = $scope.donanteSeleccionado.per_id;
             console.log(JSON.stringify($scope.donacion, null, 2));
             //console.log('donacion para agregar: ' + $scope.donacion.nombre);
-            $http.post('app/formulario-donacion/formulario-donacion.php?action=agregar-donacion', $scope.donacion)
+            $http
+                .post('app/formulario-donacion/formulario-donacion.php?action=agregar-donacion', $scope.donacion)
                 .then(function(response) {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
@@ -87,7 +86,8 @@
             $scope.donacion.persona = $scope.donanteSeleccionado.per_id;
             console.log(JSON.stringify($scope.donacion, null, 2));
             //console.log('donacion para modificar: ' + $scope.donacion.nombre);
-            $http.post('app/formulario-donacion/formulario-donacion.php?action=modificar-donacion', $scope.donacion)
+            $http
+                .post('app/formulario-donacion/formulario-donacion.php?action=modificar-donacion', $scope.donacion)
                 .then(function(response) {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);

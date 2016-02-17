@@ -1,3 +1,10 @@
+/**
+ * @desc Directiva personalizada.
+ * @example <formulario-donante></formulario-donante>
+ * @author Roberto Sottini <robysottini@gmail.com>
+ */
+// Nombre de directiva (JavaScript): se usa camelcase.
+// Nombre de la etiqueta (HTML): se usa guión medio.
 (function() {
     'use strict';
 

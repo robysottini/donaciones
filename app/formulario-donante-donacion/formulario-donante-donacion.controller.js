@@ -45,12 +45,13 @@
          * Solicita todos los grupos sanguíneos al archivo formulario-donante-donacion.php y los
          * guarda en el array matrizGruposSanguineos.
          */
-        $http.get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos')
+        $http
+            .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos')
             .success(function(response) {
                 $scope.matrizGruposSanguineos = response;
                 //console.log('Grupo Sanguineo[0]: ' + response[0].gru_nombre);
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos. Status: ' + status + '.');
         });    
         
@@ -58,12 +59,13 @@
          * Solicita las frecuencias de donación (3, 4 ó 6 meses) al archivo
          * formulario-donante-donacion.php y las guarda en el array matrizFrecuenciasDeDonacion.
          */
-        $http.get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-frecuencias-de-donacion')
+        $http
+            .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-frecuencias-de-donacion')
             .success(function(response) {
                 $scope.matrizFrecuenciasDeDonacion = response;
                 //console.log('Frecuencia de donación[0]: ' + response[0].fre_nombre);
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-frecuencias-de-donacion. Status: ' + status + '.');
         });
 
@@ -71,12 +73,13 @@
          * Solicita todos los donantes al archivo formulario-donante-donacion.php y las
          * guarda en el array rowDonantes.
          */
-        $http.get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes')
+        $http
+            .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes')
             .success(function(response) {
                 $scope.rowDonantes = response;
                 //console.log(JSON.stringify($scope.rowDonantes, null, 2));
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes. Status: ' + status + '.');
         });
 
@@ -89,7 +92,8 @@
             //$scope.donanteDonacion.donante = $scope.donanteSeleccionado.per_id;
             //console.log('donanteDonacion = ' + JSON.stringify($scope.donanteDonacion, null, 2));
             //console.log('Donante para agregar: ' + $scope.donante.nombre);
-            $http.post('app/formulario-donante-donacion/formulario-donante-donacion.php?action=agregar-donante-donacion', $scope.donanteDonacion)
+            $http
+                .post('app/formulario-donante-donacion/formulario-donante-donacion.php?action=agregar-donante-donacion', $scope.donanteDonacion)
                 .then(function(response) {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);

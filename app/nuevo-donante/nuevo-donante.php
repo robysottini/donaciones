@@ -112,17 +112,17 @@ switch($_REQUEST['action']) {
         //echo "$persona->nombre";
         $valores = 
             "(" . 
-            "'" . $persona->nombre . "', " . 
-            "'" . $persona->apellido . "', " . 
-            "'" . $persona->dni . "', " . 
-            "'" . $persona->fechaDeNacimiento . "', " . 
-            "'" . $persona->codigoDeArea . "', " . 
-            "'" . $persona->telefono . "', " . 
-            "'" . $persona->email . "', " . 
-            "'" . $persona->direccion . "', " . 
-                  $persona->grupoSanguineo . ", " . 
-                  $persona->frecuenciaDeDonacion . ", " . 
-            "'" . $persona->nota . "'" . 
+            "'" . $persona->per_nombre . "', " . 
+            "'" . $persona->per_apellido . "', " . 
+            "'" . $persona->per_dni . "', " . 
+            "'" . $persona->per_fecha_nacimiento . "', " . 
+            "'" . $persona->per_codigo_area . "', " . 
+            "'" . $persona->per_telefono . "', " . 
+            "'" . $persona->per_email . "', " . 
+            "'" . $persona->per_direccion . "', " . 
+                  $persona->per_gru_sanguineo . ", " . 
+                  $persona->per_frecuencia . ", " . 
+            "'" . $persona->per_nota . "'" . 
             ")"
         ;
         
@@ -164,18 +164,19 @@ switch($_REQUEST['action']) {
 
     case 'modificar-persona':
         $persona = json_decode(file_get_contents("php://input"));
-        $per_id = $persona->per_id;
-        $per_nombre = $persona->per_nombre;
-        $per_apellido = $persona->per_apellido;
-        $per_dni = $persona->per_dni;
-        $per_fecha_nacimiento = $persona->per_fecha_nacimiento; //TODO: Convertir fecha a "Y-m-d". Si cambia el el fomrato qe devuelve el datepicker, acá dará error.
-        $per_codigo_area = $persona->per_codigo_area;
-        $per_telefono = $persona->per_telefono;
-        $per_email = $persona->per_email;
-        $per_direccion = $persona->per_direccion; 
-        $per_gru_sanguineo = $persona->per_gru_sanguineo;
-        $per_frecuencia = $persona->per_frecuencia;
-        $per_nota = $persona->per_nota;
+
+        $per_id                 = $persona->per_id;
+        $per_nombre             = $persona->per_nombre;
+        $per_apellido           = $persona->per_apellido;
+        $per_dni                = $persona->per_dni;
+        $per_fecha_nacimiento   = $persona->per_fecha_nacimiento; //TODO: Convertir fecha a "Y-m-d". Si cambia el el fomrato qe devuelve el datepicker, acá dará error.
+        $per_codigo_area        = $persona->per_codigo_area;
+        $per_telefono           = $persona->per_telefono;
+        $per_email              = $persona->per_email;
+        $per_direccion          = $persona->per_direccion; 
+        $per_gru_sanguineo      = $persona->per_gru_sanguineo;
+        $per_frecuencia         = $persona->per_frecuencia;
+        $per_nota               = $persona->per_nota;
         
         $sSQL = "
             UPDATE 

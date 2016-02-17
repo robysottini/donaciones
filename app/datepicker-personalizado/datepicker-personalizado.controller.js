@@ -1,7 +1,8 @@
 /**
- * Controlador para la directiva personalizada Datepicker.
+ * @desc Controlador para la directiva personalizada Datepicker.
  * @author Roberto Sottini <robysottini@gmail.com>
  */
+ 
 (function() {
     'use strict';
 

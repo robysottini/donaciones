@@ -7,33 +7,25 @@
                 <div class="col-md-4 col-md-offset-1">
                     <div class="form-group">
                         <label class="control-label">DNI/Pasaporte *</label>
-                        <input type="text" class="form-control" ng-model="donanteSeleccionado" bs-options="donante.per_dni for donante in matrizPersonas" bs-typeahead required>
+                        <input type="text" class="form-control" 
+                            ng-model="donanteSeleccionado" 
+                            bs-options="donante.per_dni for donante in matrizPersonas" 
+                            bs-typeahead 
+                            required
+                        >
                     </div>
                     <div class="form-group">
                         <label class="control-label">Nombre del donante *</label>
-                        <input type="text" class="form-control ng-pristine ng-invalid" ng-readonly="true" value="{{donanteSeleccionado.per_apellido}} {{donanteSeleccionado.per_nombre}}" required>
+                        <input type="text" class="form-control ng-pristine ng-invalid" 
+                            ng-readonly="true" 
+                            value="{{donanteSeleccionado.per_apellido}} {{donanteSeleccionado.per_nombre}}" 
+                            required
+                        >
                     </div>
-                    
-                    <label class="control-label">Fecha de donación *</label>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label class="sr-only">Día *</label>
-                                <input type="number" class="form-control ng-pristine ng-invalid" min="1" max="31" ng-model="donacion.dia" required>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label class="sr-only">Mes *</label>
-                                <input type="number" class="form-control ng-pristine ng-invalid" min="1" max="12" ng-model="donacion.mes" required>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="sr-only">Año *</label>
-                                <input type="number" class="form-control ng-pristine ng-invalid" min="1990" max="2025" ng-model="donacion.ano" required>
-                            </div>
-                        </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Fecha de nacimiento *</label>
+                        <datepicker-personalizado></datepicker-personalizado>
                     </div>
                     <br>
 

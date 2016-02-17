@@ -42,12 +42,13 @@
          * Solicita todas las personas al archivo modificar-donante.php y las 
          * guarda en el array matrizPersonas.
          */
-        $http.get('app/modificar-donante/modificar-donante.php?action=obtener-personas')
+        $http
+            .get('app/modificar-donante/modificar-donante.php?action=obtener-personas')
             .success(function(response) {
                 $scope.matrizPersonas = response;
                 //console.log(JSON.stringify($scope.matrizPersonas, null, 2));
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('Error en modificar-donante.js > modificar-donante.php?action=obtener-personas. Status: ' + status + '.');
         });
 
@@ -55,12 +56,13 @@
          * Solicita todos los grupos sanguíneos al archivo modificar-donante.php y los
          * guarda en el array matrizGruposSanguineos.
          */
-        $http.get('app/modificar-donante/modificar-donante.php?action=obtener-grupos-sanguineos')
+        $http
+            .get('app/modificar-donante/modificar-donante.php?action=obtener-grupos-sanguineos')
             .success(function(response) {
                 $scope.matrizGruposSanguineos = response;
                 //console.log('Grupo Sanguineo[0]: ' + response[0].gru_nombre);
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('Error en modificar-donante.js > app/modificar-donante/modificar-donante.php?action=obtener-grupos-sanguineos. Status: ' + status + '.');
         });    
         
@@ -68,29 +70,15 @@
          * Solicita las frecuencias de donación (3, 4 ó 6 meses) al archivo
          * modificar-donante.php y las guarda en el array matrizFrecuenciasDeDonacion.
          */
-        $http.get('app/modificar-donante/modificar-donante.php?action=obtener-frecuencias-de-donacion')
+        $http
+            .get('app/modificar-donante/modificar-donante.php?action=obtener-frecuencias-de-donacion')
             .success(function(response) {
                 $scope.matrizFrecuenciasDeDonacion = response;
                 //console.log('Frecuencia de donación[0]: ' + response[0].fre_nombre);
-            }).
-            error(function(data, status, headers, config) {
+            })
+            .error(function(data, status, headers, config) {
                 console.log('Error en modificar-donante.js > app/modificar-donante/modificar-donante.php?action=obtener-frecuencias-de-donacion. Status: ' + status + '.');
         });
-
-        /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-         * Envía el objeto persona al archivo modificar-donante.php para agregar
-         * una nueva persona.
-         */
-        $scope.agregarPersona = function() {
-            //console.log('Persona para agregar: ' + $scope.persona.nombre);
-            $http.post('app/modificar-donante/modificar-donante.php?action=agregar-persona', $scope.persona)
-                .then(function(response) {
-                    //console.log('Respuesta: ' + response.status);
-                    //console.log('Data: ' + response.data);
-                    $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
-                    $scope.modificarDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
-                });
-        };
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
          * Envía el objeto persona al archivo modificar-donante.php para modificar
@@ -98,12 +86,13 @@
          */
         $scope.modificarPersona = function() {
             //console.log('Persona para modificar: ' + $scope.persona.nombre);
-            $http.post('app/modificar-donante/modificar-donante.php?action=modificar-persona', $scope.persona)
+            $http
+                .post('app/modificar-donante/modificar-donante.php?action=modificar-persona', $scope.persona)
                 .then(function(response) {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
-                    $scope.formularioDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
+                    $scope.modificarDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
                 })
         };
         $scope.matrizAnos = [

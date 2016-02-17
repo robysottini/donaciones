@@ -1,5 +1,6 @@
 /**
  * @desc Directiva personalizada.
+ * @example <formulario-donacion></formulario-donacion>
  * @author Roberto Sottini <robysottini@gmail.com>
  */
 // Nombre de directiva (JavaScript): se usa camelcase.

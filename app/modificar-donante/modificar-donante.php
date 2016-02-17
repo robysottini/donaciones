@@ -107,75 +107,21 @@ switch($_REQUEST['action']) {
         print(json_encode($arr));
         break;
 
-    case 'agregar-persona':
-        $persona = json_decode(file_get_contents("php://input"));
-        //echo "$persona->nombre";
-        $valores = 
-            "(" . 
-            "'" . $persona->nombre . "', " . 
-            "'" . $persona->apellido . "', " . 
-            "'" . $persona->dni . "', " . 
-            "'" . $persona->fechaDeNacimiento . "', " . 
-            "'" . $persona->codigoDeArea . "', " . 
-            "'" . $persona->telefono . "', " . 
-            "'" . $persona->email . "', " . 
-            "'" . $persona->direccion . "', " . 
-                  $persona->grupoSanguineo . ", " . 
-                  $persona->frecuenciaDeDonacion . ", " . 
-            "'" . $persona->nota . "'" . 
-            ")"
-        ;
-        
-        $sSQL = "
-            INSERT INTO personas (
-                per_nombre, 
-                per_apellido, 
-                per_dni, 
-                per_fecha_nacimiento, 
-                per_codigo_area, 
-                per_telefono, 
-                per_email, 
-                per_direccion, 
-                per_gru_sanguineo, 
-                per_frecuencia, 
-                per_nota) 
-            
-            VALUES " . $valores . ";"
-        ;
-
-        $stringPrueba = "abc";
-        echo ("String: " . $sSQL);
-
-        // Creo una conexión.
-        $oDB->connect();
-
-        // Ejecutar la consulta SQL.
-        $oDB->query($sSQL);
-
-        // Desconectarse de la base de datos.
-        $oDB->disconnect();
-
-        // Guardar resultado de la consulta SQL en un arreglo.
-        $arr = $oDB->resultToArray();
-
-        // Convierte un string a formato JSON.        
-        print(json_encode($arr));
-        break;
-
     case 'modificar-persona':
         $persona = json_decode(file_get_contents("php://input"));
-        $per_id = $persona->per_id;
-        $per_nombre = $persona->per_nombre;
-        $per_apellido = $persona->per_apellido;
-        $per_dni = $persona->per_dni;
-        $per_fecha_nacimiento = $persona->per_fecha_nacimiento; //TODO: Convertir fecha a "Y-m-d". Si cambia el el fomrato qe devuelve el datepicker, acá dará error.
-        $per_codigo_area = $persona->per_codigo_area;
-        $per_telefono = $persona->per_telefono;
-        $per_email = $persona->per_email;
-        $per_direccion = $persona->per_direccion; 
-        $per_gru_sanguineo = $persona->per_gru_sanguineo;
-        $per_frecuencia = $persona->per_frecuencia;
-        $per_nota = $persona->per_nota;
+
+        $per_id                 = $persona->per_id;
+        $per_nombre             = $persona->per_nombre;
+        $per_apellido           = $persona->per_apellido;
+        $per_dni                = $persona->per_dni;
+        $per_fecha_nacimiento   = $persona->per_fecha_nacimiento; //TODO: Convertir fecha a "Y-m-d". Si cambia el el formato que devuelve el datepicker, acá dará error.
+        $per_codigo_area        = $persona->per_codigo_area;
+        $per_telefono           = $persona->per_telefono;
+        $per_email              = $persona->per_email;
+        $per_direccion          = $persona->per_direccion; 
+        $per_gru_sanguineo      = $persona->per_gru_sanguineo;
+        $per_frecuencia         = $persona->per_frecuencia;
+        $per_nota               = $persona->per_nota;
         
         $sSQL = "
             UPDATE 
