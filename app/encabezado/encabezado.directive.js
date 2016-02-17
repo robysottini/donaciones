@@ -7,13 +7,13 @@
     'use strict';
 
     angular
-    .module('donacionesApp.encabezado')
-    .directive('encabezado', encabezado);
+        .module('donacionesApp.encabezado')
+        .directive('encabezado', encabezado);
 
     function encabezado() {
         return {
             restrict: 'E', // Creo el nuevo elemento (E: Element) con nombre "encabezado".
-            templateUrl: 'encabezado/encabezado.html'
+            templateUrl: 'app/encabezado/encabezado.html'
         }
     }
 })();

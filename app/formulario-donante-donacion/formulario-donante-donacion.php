@@ -1,6 +1,6 @@
 <?php
 
-include("../librerias/CDatabase.php");
+include("../../librerias/CDatabase.php");
 header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
 $oDB = new CDatabase();

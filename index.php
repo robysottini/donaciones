@@ -13,31 +13,27 @@
 
         <!-- AngularJS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->        
-        <script src="js/vendor/angular.js"></script>
-        <script src="js/vendor/angular-animate.js"></script>
+        <script src="scripts/angular.js"></script>
+        <script src="scripts/angular-animate.js"></script>
 
         <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.js)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="js/vendor/ui-bootstrap-tpls.js"></script>
+        <script src="scripts/ui-bootstrap-tpls.js"></script>
 
         <!-- Requerido por algunos módulos de AngularStrap -->
-        <script src="js/vendor/angular-sanitize.js"></script>
+        <script src="scripts/angular-sanitize.js"></script>
         <!-- Código JavaScript de la librería AngularStrap -->
-        <script src="js/vendor/angular-strap.js"></script>        
+        <script src="scripts/angular-strap.js"></script>        
         <!-- Plantillas en línea HTML por defecto usadas por las directivas de AngularStrap -->
-        <script src="js/vendor/angular-strap.tpl.js"></script>
+        <script src="scripts/angular-strap.tpl.js"></script>
 
-        <script src="js/vendor/angular-smart-table.min.js"></script>
-        <script src="js/vendor/lodash.min.js"></script>
+        <script src="scripts/angular-smart-table.min.js"></script>
+        <script src="scripts/lodash.min.js"></script>
         <!-- Configuraciones de la tabla Smart Table. -->
-        <script src="js/vendor/smart-table.js"></script>
+        <script src="scripts/smart-table.js"></script>
         <!-- Dos librerías para <select> de Angular Strap. -->
         <link rel="stylesheet" href="css/libs.min.css">
         <link rel="stylesheet" href="css/docs.min.css">
-
-        <!-- Plugins
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="js/plugins.js"></script>
 
         <!-- Librerías CSS de terceras partes
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -50,48 +46,48 @@
 
         <!-- donacionesApp (Proceso de bootstrapping)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="js/donacionesApp.module.js"></script>
+        <script src="app/donacionesApp.module.js"></script>
 
         <!-- datepicker-personalizado
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="datepicker-personalizado/datepicker-personalizado.module.js"></script>
-        <script src="datepicker-personalizado/datepicker-personalizado.controller.js"></script>
-        <script src="datepicker-personalizado/datepicker-personalizado.directive.js"></script>
+        <script src="app/datepicker-personalizado/datepicker-personalizado.module.js"></script>
+        <script src="app/datepicker-personalizado/datepicker-personalizado.controller.js"></script>
+        <script src="app/datepicker-personalizado/datepicker-personalizado.directive.js"></script>
 
         <!-- donantes
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="donantes/donantes.module.js"></script>
-        <script src="donantes/donantes.controller.js"></script>
-        <script src="donantes/donantes.directive.js"></script>
+        <script src="app/donantes/donantes.module.js"></script>
+        <script src="app/donantes/donantes.controller.js"></script>
+        <script src="app/donantes/donantes.directive.js"></script>
 
         <!-- encabezado
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="encabezado/encabezado.module.js"></script>
-        <script src="encabezado/encabezado.directive.js"></script>
+        <script src="app/encabezado/encabezado.module.js"></script>
+        <script src="app/encabezado/encabezado.directive.js"></script>
 
         <!-- encabezado
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="formulario-donacion/formulario-donacion.module.js"></script>
-        <script src="formulario-donacion/formulario-donacion.controller.js"></script>
-        <script src="formulario-donacion/formulario-donacion.directive.js"></script>
+        <script src="app/formulario-donacion/formulario-donacion.module.js"></script>
+        <script src="app/formulario-donacion/formulario-donacion.controller.js"></script>
+        <script src="app/formulario-donacion/formulario-donacion.directive.js"></script>
 
         <!-- formulario-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="formulario-donante-donacion/formulario-donante-donacion.module.js"></script>
-        <script src="formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
-        <script src="formulario-donante-donacion/formulario-donante-donacion.directive.js"></script>
+        <script src="app/formulario-donante-donacion/formulario-donante-donacion.module.js"></script>
+        <script src="app/formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
+        <script src="app/formulario-donante-donacion/formulario-donante-donacion.directive.js"></script>
 
         <!-- modificar-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="modificar-donante/modificar-donante.module.js"></script>
-        <script src="modificar-donante/modificar-donante.controller.js"></script>
-        <script src="modificar-donante/modificar-donante.directive.js"></script>
+        <script src="app/modificar-donante/modificar-donante.module.js"></script>
+        <script src="app/modificar-donante/modificar-donante.controller.js"></script>
+        <script src="app/modificar-donante/modificar-donante.directive.js"></script>
 
         <!-- nuevo-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="nuevo-donante/nuevo-donante.module.js"></script>
-        <script src="nuevo-donante/nuevo-donante.controller.js"></script>
-        <script src="nuevo-donante/nuevo-donante.directive.js"></script>
+        <script src="app/nuevo-donante/nuevo-donante.module.js"></script>
+        <script src="app/nuevo-donante/nuevo-donante.controller.js"></script>
+        <script src="app/nuevo-donante/nuevo-donante.directive.js"></script>
 
         <!-- Estilos personalizados
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->

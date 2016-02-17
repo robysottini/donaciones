@@ -8,19 +8,17 @@
  * @version 1.0
  */
 
-// Nombre de directiva: se usa camelcase.
-// Nombre de la etiqueta: se usa guión medio.
 (function() {
     'use strict';
 
     angular
-    .module('donacionesApp.nuevoDonante')
-    .directive('nuevoDonante', nuevoDonante);
+        .module('donacionesApp.modificarDonante')
+        .directive('modificarDonante', modificarDonante);
 
-    function nuevoDonante() {
+    function modificarDonante() {
         return {
-            restrict: 'E', // Creo el nuevo elemento (E: Element) con nombre 'nuevo-donante'.
-            templateUrl: 'nuevo-donante/nuevo-donante.html'
+            restrict: 'E', // Creo el modificar elemento (E: Element) con nombre 'modificar-donante'.
+            templateUrl: 'app/modificar-donante/modificar-donante.html'
         }
     }
 })();

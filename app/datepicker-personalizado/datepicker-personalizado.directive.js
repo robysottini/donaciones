@@ -13,7 +13,7 @@
     function datepickerPersonalizado() {
         return {
             restrict: 'E', // Creo el nuevo elemento (E: Element) con nombre 'datepickerPersonalizado'.
-            templateUrl: 'datepicker-personalizado/datepicker-personalizado.html'
+            templateUrl: 'app/datepicker-personalizado/datepicker-personalizado.html'
         }
     }
 })();

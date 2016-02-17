@@ -18,7 +18,7 @@
          * Solicita todas las personas y sus respectivas próximas donaciones al
          * archivo personas.php y las guarda en el array matrizPersonas.
          */
-        $http.get('donantes/donantes.php?action=obtener-personas')
+        $http.get('app/donantes/donantes.php?action=obtener-personas')
             .success(function(response) {
                 $scope.matrizPersonas = response;
                 //console.log('JSON: ' + response[0].per_nombre);
