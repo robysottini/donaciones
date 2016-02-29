@@ -18,11 +18,14 @@
         //$scope.rowDonantes = [];
         //$scope.donanteSeleccionado = {};
         $scope.donanteDonacion = {
+            /*
             per_apellido: 'Erlenmeyer',
             per_nombre: 'Richard August Carl Emil',
             per_dni: '23',
             per_fecha_nacimiento: '1825-06-28',
-            per_codigo_area: '02901', // Valor por defecto que aparece en el formulario.
+            */
+            per_codigo_area: '02901'//, Valor por defecto que aparece en el formulario.
+            /*
             per_telefono: '15000023',
             per_email: 'emil.erlenmeyer@gmail.de',
             per_direccion: 'Taunusstein, Hesse',
@@ -30,6 +33,7 @@
             per_frecuencia: '2',
             per_nota: 'Tatuaje de la Universidad de Gießen.',
             don_fecha: '2015-10-16'
+            */
         };
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -59,20 +63,6 @@
             .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-frecuencias-de-donacion. Status: ' + status + '.');
         });
-
-        /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-         * Solicita todos los donantes al archivo formulario-donante-donacion.php y las
-         * guarda en el array rowDonantes.
-         */
-        /*$http
-            .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes')
-            .success(function(response) {
-                $scope.rowDonantes = response;
-                //console.log(JSON.stringify($scope.rowDonantes, null, 2));
-            })
-            .error(function(data, status, headers, config) {
-                console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes. Status: ' + status + '.');
-        });*/
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
          * Envía el objeto donanteDonacion al archivo

@@ -16,17 +16,21 @@
         $scope.matrizGruposSanguineos = [];
         $scope.matrizFrecuenciasDeDonacion = [];
         $scope.persona = {
+            /*
             per_apellido: 'Einstein',
             per_nombre: 'Albert',
             per_dni: '22',
             per_fecha_nacimiento: '1879-03-14',
-            per_codigo_area: '02901', // Valor por defecto.
+            */
+            per_codigo_area: '02901'//,  Valor por defecto.
+            /*
             per_telefono: '15123456',
             per_email: 'albert.einstein@gmail.de',
             per_direccion: 'Ulm, Reino de Wurtemberg',
             per_gru_sanguineo: '1',
             per_frecuencia: '3',
             per_nota: 'Tatuaje E=MC2.'
+            */
         };
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

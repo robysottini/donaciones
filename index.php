@@ -11,21 +11,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <script src="scripts/reloadr.js"></script>
-        <script>
-        // This code should go directly after your include line
-            Reloadr.go({
-                client: [
-                    'main.css'
-                ],
-                server: [
-                    '*.php',
-                    'tests/*.php'
-                ],
-                path: 'scripts/reloadr.php'
-            });
-        </script>
-
         <!-- AngularJS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->        
         <script src="scripts/angular.js"></script>
