@@ -1,14 +1,10 @@
 /**
- * Módulo Donante y Donacion con directiva personalizada.
- * Acá se agrega el código JavaScript del componente de UI-Bootrap que se
- * necesite, como el código para Tabs.
- * También se llaman los archivos php que interactúan con la base de datos.
- * 
+ * @desc Controlador FormularioDonanteDonacionController.
  * @author Roberto Sottini <robysottini@gmail.com>
- * @version 1.0
  */
 
 (function() {
+    'use strict';
 
     angular
         .module('donacionesApp.formularioDonanteDonacion')
@@ -19,26 +15,21 @@
     function FormularioDonanteDonacionController($scope, $http) {
         $scope.matrizGruposSanguineos = [];
         $scope.matrizFrecuenciasDeDonacion = [];
-        $scope.rowDonantes = [];
-        $scope.donanteSeleccionado = {};
+        //$scope.rowDonantes = [];
+        //$scope.donanteSeleccionado = {};
         $scope.donanteDonacion = {
-            apellido: 'Juan',
-            nombre: 'Pérez',
-            dni: 30123456,
-            dia: 17,
-            mes: 06,
-            ano: 1988,
-            telefono: '15123456',
-            email: 'juanperez@gmail.com',
-            direccion: 'San Martín 1234',
-            grupoSanguineo: 3,
-            frecuenciaDeDonacion: 3,
-            nota: 'Presión baja.',
-            diaDeDonacion: 05,
-            mesDeDonacion: 01,
-            anoDeDonacion: 2016,
-            
-            codigoDeArea: '02901' // Valor por defecto que aparece en el formulario.
+            per_apellido: 'Erlenmeyer',
+            per_nombre: 'Richard August Carl Emil',
+            per_dni: '23',
+            per_fecha_nacimiento: '1825-06-28',
+            per_codigo_area: '02901', // Valor por defecto que aparece en el formulario.
+            per_telefono: '15000023',
+            per_email: 'emil.erlenmeyer@gmail.de',
+            per_direccion: 'Taunusstein, Hesse',
+            per_gru_sanguineo: '2',
+            per_frecuencia: '2',
+            per_nota: 'Tatuaje de la Universidad de Gießen.',
+            don_fecha: '2015-10-16'
         };
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -73,7 +64,7 @@
          * Solicita todos los donantes al archivo formulario-donante-donacion.php y las
          * guarda en el array rowDonantes.
          */
-        $http
+        /*$http
             .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes')
             .success(function(response) {
                 $scope.rowDonantes = response;
@@ -81,7 +72,7 @@
             })
             .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-donantes. Status: ' + status + '.');
-        });
+        });*/
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
          * Envía el objeto donanteDonacion al archivo

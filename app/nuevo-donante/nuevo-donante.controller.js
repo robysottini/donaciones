@@ -1,11 +1,6 @@
 /**
- * Módulo Donante con directiva personalizada.
- * Acá se agrega el código JavaScript del componente de UI-Bootrap que se
- * necesite, como el código para Tabs.
- * También se llaman los archivos php que interactúan con la base de datos.
- * 
+ * @desc Controlador NuevoDonanteController.
  * @author Roberto Sottini <robysottini@gmail.com>
- * @version 1.0
  */
 
 (function() {

@@ -1,8 +1,6 @@
 /**
- * @desc Controlador FormularioDonacion.
- * 
+ * @desc Controlador FormularioDonacionController.
  * @author Roberto Sottini <robysottini@gmail.com>
- * @version 1.0
  */
 
 // Nombre de directiva (JavaScript): se usa camelcase.

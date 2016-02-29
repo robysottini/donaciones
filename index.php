@@ -11,6 +11,21 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <script src="scripts/reloadr.js"></script>
+        <script>
+        // This code should go directly after your include line
+            Reloadr.go({
+                client: [
+                    'main.css'
+                ],
+                server: [
+                    '*.php',
+                    'tests/*.php'
+                ],
+                path: 'scripts/reloadr.php'
+            });
+        </script>
+
         <!-- AngularJS
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->        
         <script src="scripts/angular.js"></script>
@@ -48,12 +63,6 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/donacionesApp.module.js"></script>
 
-        <!-- datepicker-personalizado
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="app/datepicker-personalizado/datepicker-personalizado.module.js"></script>
-        <script src="app/datepicker-personalizado/datepicker-personalizado.controller.js"></script>
-        <script src="app/datepicker-personalizado/datepicker-personalizado.directive.js"></script>
-
         <!-- donantes
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/donantes/donantes.module.js"></script>
@@ -69,24 +78,28 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/formulario-donacion/formulario-donacion.module.js"></script>
         <script src="app/formulario-donacion/formulario-donacion.controller.js"></script>
+        <script src="app/formulario-donacion/formulario-donacion.controller.datepicker.js"></script>
         <script src="app/formulario-donacion/formulario-donacion.directive.js"></script>
 
         <!-- formulario-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.module.js"></script>
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
+        <script src="app/formulario-donante-donacion/formulario-donante-donacion.controller.datepicker.js"></script>
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.directive.js"></script>
 
         <!-- modificar-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/modificar-donante/modificar-donante.module.js"></script>
         <script src="app/modificar-donante/modificar-donante.controller.js"></script>
+        <script src="app/modificar-donante/modificar-donante.controller.datepicker.js"></script>
         <script src="app/modificar-donante/modificar-donante.directive.js"></script>
 
         <!-- nuevo-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/nuevo-donante/nuevo-donante.module.js"></script>
         <script src="app/nuevo-donante/nuevo-donante.controller.js"></script>
+        <script src="app/nuevo-donante/nuevo-donante.controller.datepicker.js"></script>
         <script src="app/nuevo-donante/nuevo-donante.directive.js"></script>
 
         <!-- Estilos personalizados

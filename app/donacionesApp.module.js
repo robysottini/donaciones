@@ -14,7 +14,6 @@
             'ngSanitize', 
             'mgcrea.ngStrap', 
             'smart-table',
-            'donacionesApp.datepickerPersonalizado',
             'donacionesApp.donantes',
             'donacionesApp.encabezado',
             'donacionesApp.formularioDonacion',
