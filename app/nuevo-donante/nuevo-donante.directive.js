@@ -16,6 +16,6 @@
         return {
             restrict: 'E', // Creo el nuevo elemento (E: Element) con nombre 'nuevo-donante'.
             templateUrl: 'app/nuevo-donante/nuevo-donante.html'
-        }
+        };
     }
 })();

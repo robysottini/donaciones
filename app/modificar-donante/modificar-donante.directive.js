@@ -16,6 +16,6 @@
         return {
             restrict: 'E', // Creo el modificar elemento (E: Element) con nombre 'modificar-donante'.
             templateUrl: 'app/modificar-donante/modificar-donante.html'
-        }
+        };
     }
 })();

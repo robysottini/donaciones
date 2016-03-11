@@ -42,13 +42,21 @@
          */
         $http
             .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos')
+            .then(function(response) {
+                $scope.matrizGruposSanguineos = response.data;
+                //console.log(JSON.stringify($scope.matrizGruposSanguineos, null, 2));
+                }, function(response) {
+                    console.log('Error formulario-donante-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+            });
+        /*$http
+            .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos')
             .success(function(response) {
                 $scope.matrizGruposSanguineos = response;
                 //console.log('Grupo Sanguineo[0]: ' + response[0].gru_nombre);
             })
             .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos. Status: ' + status + '.');
-        });    
+        });*/
         
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
          * Solicita las frecuencias de donación (3, 4 ó 6 meses) al archivo
@@ -56,13 +64,12 @@
          */
         $http
             .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-frecuencias-de-donacion')
-            .success(function(response) {
-                $scope.matrizFrecuenciasDeDonacion = response;
+            .then(function(response) {
+                $scope.matrizFrecuenciasDeDonacion = response.data;
                 //console.log('Frecuencia de donación[0]: ' + response[0].fre_nombre);
-            })
-            .error(function(data, status, headers, config) {
-                console.log('Error en main.js > app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-frecuencias-de-donacion. Status: ' + status + '.');
-        });
+                }, function(response) {
+                    console.log('Error formulario-donante-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+            });
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
          * Envía el objeto donanteDonacion al archivo

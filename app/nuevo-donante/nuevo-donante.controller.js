@@ -39,12 +39,11 @@
          */
         $http
             .get('app/nuevo-donante/nuevo-donante.php?action=obtener-grupos-sanguineos')
-            .success(function(response) {
-                $scope.matrizGruposSanguineos = response;
+            .then(function(response) {
+                $scope.matrizGruposSanguineos = response.data;
                 //console.log('Grupo Sanguineo[0]: ' + response[0].gru_nombre);
-            })
-            .error(function(data, status, headers, config) {
-                console.log('Error en main.js > app/nuevo-donante/nuevo-donante.php?action=obtenerGruposSanguineos. Status: ' + status + '.');
+            }, function(response) {
+                console.log('Error nuevo-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
         });    
         
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -53,12 +52,11 @@
          */
         $http
             .get('app/nuevo-donante/nuevo-donante.php?action=obtener-frecuencias-de-donacion')
-            .success(function(response) {
-                $scope.matrizFrecuenciasDeDonacion = response;
+            .then(function(response) {
+                $scope.matrizFrecuenciasDeDonacion = response.data;
                 //console.log('Frecuencia de donación[0]: ' + response[0].fre_nombre);
-            })
-            .error(function(data, status, headers, config) {
-                console.log('Error en main.js > app/nuevo-donante/nuevo-donante.php?action=obtenerFrecuenciasDeDonacion. Status: ' + status + '.');
+            }, function(response) {
+                console.log('Error modificar-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
         });
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––

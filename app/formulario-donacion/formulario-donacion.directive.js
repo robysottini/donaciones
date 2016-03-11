@@ -16,6 +16,6 @@
         return {
             restrict: 'E', // Creo el nuevo elemento (E: Element) con nombre 'formularioDonacion'.
             templateUrl: 'app/formulario-donacion/formulario-donacion.html'
-        }
+        };
     }
 })();
