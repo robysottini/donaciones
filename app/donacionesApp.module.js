@@ -6,11 +6,12 @@
  
 (function() {
     'use strict';
-
+    
     angular
         .module('donacionesApp', [
             'ngAnimate', 
             'ui.bootstrap', 
+            'ui.router', 
             'ngSanitize', 
             'mgcrea.ngStrap', 
             'smart-table',

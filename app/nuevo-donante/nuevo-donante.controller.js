@@ -43,7 +43,7 @@
                 $scope.matrizGruposSanguineos = response.data;
                 //console.log('Grupo Sanguineo[0]: ' + response[0].gru_nombre);
             }, function(response) {
-                console.log('Error nuevo-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+                console.log('Error en nuevo-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
         });    
         
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -56,7 +56,7 @@
                 $scope.matrizFrecuenciasDeDonacion = response.data;
                 //console.log('Frecuencia de donación[0]: ' + response[0].fre_nombre);
             }, function(response) {
-                console.log('Error modificar-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+                console.log('Error en modificar-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
         });
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -67,11 +67,13 @@
             //console.log('Persona para agregar: ' + $scope.persona.nombre);
             $http
                 .post('app/nuevo-donante/nuevo-donante.php?action=agregar-persona', $scope.persona)
-                .then(function(response) {
+                .then(function() {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                     $scope.nuevoDonante.$setPristine(); // Establezco el nuevo y todos sus controles al estado original.
+                }, function(response) {
+                    console.log('Error en nuevo-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
                 });
         };
     }

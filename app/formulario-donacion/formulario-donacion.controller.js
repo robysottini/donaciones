@@ -53,7 +53,7 @@
                 $scope.matrizPersonas = response.data;
                 //console.log(JSON.stringify($scope.matrizPersonas, null, 2));
                 }, function(response) {
-                    console.log('Error formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+                    console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
             });
         
         /*$http
@@ -76,14 +76,14 @@
             //console.log('donacion para agregar: ' + $scope.donacion.nombre);
             $http
                 .post('app/formulario-donacion/formulario-donacion.php?action=agregar-donacion', $scope.donacion)
-                .then(function(response) {
+                .then(function() {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.donacion = {}; // Limpio los campos.
                     $scope.donanteSeleccionado = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                     $scope.formularioDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
                 }, function(response) {
-                    console.log('Error formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+                    console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
                 });
         };
         
@@ -97,14 +97,14 @@
             //console.log('donacion para modificar: ' + $scope.donacion.nombre);
             $http
                 .post('app/formulario-donacion/formulario-donacion.php?action=modificar-donacion', $scope.donacion)
-                .then(function(response) {
+                .then(function() {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.donacion = {}; // Limpio los campos.
                     $scope.donanteSeleccionado = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                     $scope.formularioDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
                 }, function(response) {
-                    console.log('Error formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+                    console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
                 });
         };
     }

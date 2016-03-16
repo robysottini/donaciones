@@ -19,6 +19,7 @@
         <!-- Librerías JS de terceras partes (siempre debajo de la librería de angular.js)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="scripts/ui-bootstrap-tpls.js"></script>
+        <script src="scripts/angular-ui-router.min.js"></script>
 
         <!-- Requerido por algunos módulos de AngularStrap -->
         <script src="scripts/angular-sanitize.js"></script>
@@ -47,6 +48,8 @@
         <!-- donacionesApp (Proceso de bootstrapping)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/donacionesApp.module.js"></script>
+        <script src="app/donacionesApp.config.js"></script>
+        <script src="app/donacionesApp.controller.js"></script>
 
         <!-- donantes
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -85,7 +88,7 @@
         <script src="app/nuevo-donante/nuevo-donante.module.js"></script>
         <script src="app/nuevo-donante/nuevo-donante.controller.js"></script>
         <script src="app/nuevo-donante/nuevo-donante.controller.datepicker.js"></script>
-        <script src="app/nuevo-donante/nuevo-donante.directive.js"></script>
+        <!-- <script src="app/nuevo-donante/nuevo-donante.directive.js"></script> -->
 
         <!-- Estilos personalizados
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -97,36 +100,15 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+        <script src="tabs.js"></script>
+
     </head>
-    <body ng-cloak>
+    <body ng-cloak class="container">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        <!-- Add your site or application content here -->
-       
-        <main>
-            <div class="container">
-                <!-- Encabezado con el título y nombres de las agencias -->
-                <encabezado></encabezado>
-                <uib-tabset>
-                    <uib-tab heading="Nuevo donante">
-                        <nuevo-donante></nuevo-donante>
-                    </uib-tab>
-                    <uib-tab heading="Modificar donante">
-                        <modificar-donante></modificar-donante>
-                    </uib-tab>
-                    <uib-tab heading="Donantes">
-                        <donantes></donantes>
-                    </uib-tab>
-                    <uib-tab heading="Nueva donación">
-                        <formulario-donacion></formulario-donacion>
-                    </uib-tab>
-                    <uib-tab heading="Nuevo donante con donación">
-                        <formulario-donante-donacion></formulario-donante-donacion>
-                    </uib-tab>
-                </uib-tabset>
-            </div>
-        </main>
+
+        <div ui-view></div>
+
     </body>
 </html>

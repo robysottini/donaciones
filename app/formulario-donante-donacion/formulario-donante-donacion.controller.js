@@ -46,7 +46,7 @@
                 $scope.matrizGruposSanguineos = response.data;
                 //console.log(JSON.stringify($scope.matrizGruposSanguineos, null, 2));
                 }, function(response) {
-                    console.log('Error formulario-donante-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+                    console.log('Error en formulario-donante-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
             });
         /*$http
             .get('app/formulario-donante-donacion/formulario-donante-donacion.php?action=obtener-grupos-sanguineos')
@@ -68,7 +68,7 @@
                 $scope.matrizFrecuenciasDeDonacion = response.data;
                 //console.log('Frecuencia de donación[0]: ' + response[0].fre_nombre);
                 }, function(response) {
-                    console.log('Error formulario-donante-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+                    console.log('Error en formulario-donante-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
             });
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -82,11 +82,13 @@
             //console.log('Donante para agregar: ' + $scope.donante.nombre);
             $http
                 .post('app/formulario-donante-donacion/formulario-donante-donacion.php?action=agregar-donante-donacion', $scope.donanteDonacion)
-                .then(function(response) {
+                .then(function() {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.donanteDonacion = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                     $scope.formularioDonanteDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
+                }, function(response) {
+                    console.log('Error en formulario-donante-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
                 });
         };
     }
