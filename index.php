@@ -48,25 +48,19 @@
         <!-- donacionesApp (Proceso de bootstrapping)
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/donacionesApp.module.js"></script>
-        <script src="app/donacionesApp.config.js"></script>
-        <script src="app/donacionesApp.controller.js"></script>
 
         <!-- donantes
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/donantes/donantes.module.js"></script>
         <script src="app/donantes/donantes.controller.js"></script>
 
-        <!-- encabezado
-        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-        <script src="app/encabezado/encabezado.module.js"></script>
-
-        <!-- encabezado
+        <!-- formulario-donacion
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/formulario-donacion/formulario-donacion.module.js"></script>
         <script src="app/formulario-donacion/formulario-donacion.controller.js"></script>
         <script src="app/formulario-donacion/formulario-donacion.controller.datepicker.js"></script>
 
-        <!-- formulario-donante
+        <!-- formulario-donante-donacion
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.module.js"></script>
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
@@ -84,6 +78,12 @@
         <script src="app/nuevo-donante/nuevo-donante.controller.js"></script>
         <script src="app/nuevo-donante/nuevo-donante.controller.datepicker.js"></script>
 
+        <!-- nuevo-donante
+        –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        <script src="app/pestanas/pestanas.module.js"></script>
+        <script src="app/pestanas/pestanas.config.js"></script>
+        <script src="app/pestanas/pestanas.controller.js"></script>
+
         <!-- Estilos personalizados
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="stylesheet" href="css/main.css">
@@ -99,6 +99,7 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <div ng-include src="'app/encabezado/encabezado.html'"></div>
 
         <div ui-view></div>
 

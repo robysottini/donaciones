@@ -7,9 +7,9 @@
     'use strict';
 
     angular
-        .module('donacionesApp')
+        .module('donacionesApp.pestanas')
         .config(pestanas);
-
+        
     pestanas.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function pestanas($stateProvider, $urlRouterProvider) {
@@ -17,7 +17,7 @@
         $stateProvider
             .state('main', {
                 url:         '/main', 
-                templateUrl: 'main.html', 
+                templateUrl: 'app/pestanas/pestanas.html', 
                 abtract:     true
             })
             .state('main.estadoNuevoDonante', { 

@@ -16,10 +16,10 @@
             'mgcrea.ngStrap', 
             'smart-table',
             'donacionesApp.donantes',
-            'donacionesApp.encabezado',
             'donacionesApp.formularioDonacion',
             'donacionesApp.formularioDonanteDonacion',
             'donacionesApp.modificarDonante',
-            'donacionesApp.nuevoDonante'
+            'donacionesApp.nuevoDonante',
+            'donacionesApp.pestanas'
         ]);
 })();

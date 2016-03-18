@@ -7,7 +7,7 @@
     'use strict';
 
     angular
-        .module('donacionesApp')
+        .module('donacionesApp.pestanas')
         .controller('PestanasController', PestanasController);
 
     PestanasController.$inject = ['$scope', '$rootScope', '$state'];
