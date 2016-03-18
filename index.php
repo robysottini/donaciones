@@ -55,40 +55,34 @@
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/donantes/donantes.module.js"></script>
         <script src="app/donantes/donantes.controller.js"></script>
-        <script src="app/donantes/donantes.directive.js"></script>
 
         <!-- encabezado
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/encabezado/encabezado.module.js"></script>
-        <script src="app/encabezado/encabezado.directive.js"></script>
 
         <!-- encabezado
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/formulario-donacion/formulario-donacion.module.js"></script>
         <script src="app/formulario-donacion/formulario-donacion.controller.js"></script>
         <script src="app/formulario-donacion/formulario-donacion.controller.datepicker.js"></script>
-        <script src="app/formulario-donacion/formulario-donacion.directive.js"></script>
 
         <!-- formulario-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.module.js"></script>
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.controller.js"></script>
         <script src="app/formulario-donante-donacion/formulario-donante-donacion.controller.datepicker.js"></script>
-        <script src="app/formulario-donante-donacion/formulario-donante-donacion.directive.js"></script>
 
         <!-- modificar-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/modificar-donante/modificar-donante.module.js"></script>
         <script src="app/modificar-donante/modificar-donante.controller.js"></script>
         <script src="app/modificar-donante/modificar-donante.controller.datepicker.js"></script>
-        <script src="app/modificar-donante/modificar-donante.directive.js"></script>
 
         <!-- nuevo-donante
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <script src="app/nuevo-donante/nuevo-donante.module.js"></script>
         <script src="app/nuevo-donante/nuevo-donante.controller.js"></script>
         <script src="app/nuevo-donante/nuevo-donante.controller.datepicker.js"></script>
-        <!-- <script src="app/nuevo-donante/nuevo-donante.directive.js"></script> -->
 
         <!-- Estilos personalizados
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -99,8 +93,6 @@
         <!-- Ícono
         –––––––––––––––––––––––––––––––––––––––––––––––––– -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-        <script src="tabs.js"></script>
 
     </head>
     <body ng-cloak class="container">
