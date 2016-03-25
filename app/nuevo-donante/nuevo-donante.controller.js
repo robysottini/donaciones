@@ -1,11 +1,6 @@
 /**
- * Módulo Donante con directiva personalizada.
- * Acá se agrega el código JavaScript del componente de UI-Bootrap que se
- * necesite, como el código para Tabs.
- * También se llaman los archivos php que interactúan con la base de datos.
- * 
+ * @desc Controlador NuevoDonanteController.
  * @author Roberto Sottini <robysottini@gmail.com>
- * @version 1.0
  */
 
 (function() {
@@ -21,17 +16,21 @@
         $scope.matrizGruposSanguineos = [];
         $scope.matrizFrecuenciasDeDonacion = [];
         $scope.persona = {
+            /*
             per_apellido: 'Einstein',
             per_nombre: 'Albert',
             per_dni: '22',
             per_fecha_nacimiento: '1879-03-14',
-            per_codigo_area: '02901', // Valor por defecto.
+            */
+            per_codigo_area: '02901'//,  Valor por defecto.
+            /*
             per_telefono: '15123456',
             per_email: 'albert.einstein@gmail.de',
             per_direccion: 'Ulm, Reino de Wurtemberg',
             per_gru_sanguineo: '1',
             per_frecuencia: '3',
             per_nota: 'Tatuaje E=MC2.'
+            */
         };
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -40,12 +39,11 @@
          */
         $http
             .get('app/nuevo-donante/nuevo-donante.php?action=obtener-grupos-sanguineos')
-            .success(function(response) {
-                $scope.matrizGruposSanguineos = response;
+            .then(function(response) {
+                $scope.matrizGruposSanguineos = response.data;
                 //console.log('Grupo Sanguineo[0]: ' + response[0].gru_nombre);
-            })
-            .error(function(data, status, headers, config) {
-                console.log('Error en main.js > app/nuevo-donante/nuevo-donante.php?action=obtenerGruposSanguineos. Status: ' + status + '.');
+            }, function(response) {
+                console.log('Error en nuevo-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
         });    
         
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -54,12 +52,11 @@
          */
         $http
             .get('app/nuevo-donante/nuevo-donante.php?action=obtener-frecuencias-de-donacion')
-            .success(function(response) {
-                $scope.matrizFrecuenciasDeDonacion = response;
+            .then(function(response) {
+                $scope.matrizFrecuenciasDeDonacion = response.data;
                 //console.log('Frecuencia de donación[0]: ' + response[0].fre_nombre);
-            })
-            .error(function(data, status, headers, config) {
-                console.log('Error en main.js > app/nuevo-donante/nuevo-donante.php?action=obtenerFrecuenciasDeDonacion. Status: ' + status + '.');
+            }, function(response) {
+                console.log('Error en modificar-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
         });
 
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -70,11 +67,13 @@
             //console.log('Persona para agregar: ' + $scope.persona.nombre);
             $http
                 .post('app/nuevo-donante/nuevo-donante.php?action=agregar-persona', $scope.persona)
-                .then(function(response) {
+                .then(function() {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                     $scope.nuevoDonante.$setPristine(); // Establezco el nuevo y todos sus controles al estado original.
+                }, function(response) {
+                    console.log('Error en nuevo-donante.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
                 });
         };
     }

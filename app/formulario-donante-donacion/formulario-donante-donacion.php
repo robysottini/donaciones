@@ -70,17 +70,17 @@ switch($_REQUEST['action']) {
         //echo "$donanteDonacion->nombre";
         $valoresPersona = 
             "(" . 
-            "'" . $donanteDonacion->nombre . "', " . 
-            "'" . $donanteDonacion->apellido . "', " . 
-            "'" . $donanteDonacion->dni . "', " . 
-            "'" . $donanteDonacion->ano . "-" . $donanteDonacion->mes . "-" . $donanteDonacion->dia . "', " . 
-            "'" . $donanteDonacion->codigoDeArea . "', " . 
-            "'" . $donanteDonacion->telefono . "', " . 
-            "'" . $donanteDonacion->email . "', " . 
-            "'" . $donanteDonacion->direccion . "', " . 
-                  $donanteDonacion->grupoSanguineo . ", " . 
-                  $donanteDonacion->frecuenciaDeDonacion . ", " . 
-            "'" . $donanteDonacion->nota . "'" . 
+            "'" . $donanteDonacion->per_nombre . "', " . 
+            "'" . $donanteDonacion->per_apellido . "', " . 
+            "'" . $donanteDonacion->per_dni . "', " . 
+            "'" . $donanteDonacion->per_fecha_nacimiento . "', " . 
+            "'" . $donanteDonacion->per_codigo_area . "', " . 
+            "'" . $donanteDonacion->per_telefono . "', " . 
+            "'" . $donanteDonacion->per_email . "', " . 
+            "'" . $donanteDonacion->per_direccion . "', " . 
+                  $donanteDonacion->per_gru_sanguineo . ", " . 
+                  $donanteDonacion->per_frecuencia . ", " . 
+            "'" . $donanteDonacion->per_nota . "'" . 
             ")"
         ;        
         
@@ -103,7 +103,7 @@ switch($_REQUEST['action']) {
 
         $valoresDonacion = 
             "(" . 
-            "'" . $donanteDonacion->anoDeDonacion . "-" . $donanteDonacion->mesDeDonacion . "-" . $donanteDonacion->diaDeDonacion . "', " . 
+            "'" . $donanteDonacion->don_fecha . "', " . 
                   "currval('personas_per_id_seq')" .
             ")"
         ;

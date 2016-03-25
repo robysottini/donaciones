@@ -6,20 +6,20 @@
  
 (function() {
     'use strict';
-
+    
     angular
         .module('donacionesApp', [
             'ngAnimate', 
             'ui.bootstrap', 
+            'ui.router', 
             'ngSanitize', 
             'mgcrea.ngStrap', 
             'smart-table',
-            'donacionesApp.datepickerPersonalizado',
             'donacionesApp.donantes',
-            'donacionesApp.encabezado',
             'donacionesApp.formularioDonacion',
             'donacionesApp.formularioDonanteDonacion',
             'donacionesApp.modificarDonante',
-            'donacionesApp.nuevoDonante'
+            'donacionesApp.nuevoDonante',
+            'donacionesApp.pestanas'
         ]);
 })();

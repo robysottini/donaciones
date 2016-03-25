@@ -21,12 +21,11 @@
          */
         $http
             .get('app/donantes/donantes.php?action=obtener-personas')
-            .success(function(response) {
-                $scope.matrizPersonas = response;
+            .then(function(response) {
+                $scope.matrizPersonas = response.data;
                 //console.log('JSON: ' + response[0].per_nombre);
-            })
-            .error(function(data, status, headers, config) {
-                console.log('Error en main.js > donantes.php?action=obtenerPersonas. Status: ' + status + '.');
+                }, function(response) {
+                    console.log('Error en donantes.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
             });
     }
 })();

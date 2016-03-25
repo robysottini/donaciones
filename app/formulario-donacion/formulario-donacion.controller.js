@@ -1,8 +1,6 @@
 /**
- * @desc Controlador FormularioDonacion.
- * 
+ * @desc Controlador FormularioDonacionController.
  * @author Roberto Sottini <robysottini@gmail.com>
- * @version 1.0
  */
 
 // Nombre de directiva (JavaScript): se usa camelcase.
@@ -51,14 +49,23 @@
          */
         $http
             .get('app/formulario-donacion/formulario-donacion.php?action=obtener-personas')
+            .then(function(response) {
+                $scope.matrizPersonas = response.data;
+                //console.log(JSON.stringify($scope.matrizPersonas, null, 2));
+                }, function(response) {
+                    console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
+            });
+        
+        /*$http
+            .get('app/formulario-donacion/formulario-donacion.php?action=obtener-personas')
             .success(function(response) {
                 $scope.matrizPersonas = response;
                 //console.log(JSON.stringify($scope.matrizPersonas, null, 2));
             })
             .error(function(data, status, headers, config) {
                 console.log('Error en main.js > app/formulario-donacion/formulario-donacion.php?action=obtener-personas. Status: ' + status + '.');
-        });
-        
+        });*/
+
         /* –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
          * Envía el objeto donacion al archivo formulario-donacion.php para agregar
          * una nueva donación.
@@ -69,12 +76,14 @@
             //console.log('donacion para agregar: ' + $scope.donacion.nombre);
             $http
                 .post('app/formulario-donacion/formulario-donacion.php?action=agregar-donacion', $scope.donacion)
-                .then(function(response) {
+                .then(function() {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.donacion = {}; // Limpio los campos.
                     $scope.donanteSeleccionado = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                     $scope.formularioDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
+                }, function(response) {
+                    console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
                 });
         };
         
@@ -88,12 +97,14 @@
             //console.log('donacion para modificar: ' + $scope.donacion.nombre);
             $http
                 .post('app/formulario-donacion/formulario-donacion.php?action=modificar-donacion', $scope.donacion)
-                .then(function(response) {
+                .then(function() {
                     //console.log('Respuesta: ' + response.status);
                     //console.log('Data: ' + response.data);
                     $scope.donacion = {}; // Limpio los campos.
                     $scope.donanteSeleccionado = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
                     $scope.formularioDonacion.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
+                }, function(response) {
+                    console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
                 });
         };
     }
