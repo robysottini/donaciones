@@ -1,0 +1,76 @@
+<section>    
+    <div class="row well well-sm col-md-12">
+
+        <form name="formularioDonacion" ng-submit="formularioDonacion.$valid && agregarDonacion()" novalidate>
+            <div class="row">
+
+                <div class="col-md-4 col-md-offset-1">
+                    <div class="form-group">
+                        <label class="control-label">DNI/Pasaporte *</label>
+                        <input type="text" class="form-control" 
+                            placeholder="Ingrese DNI o número de pasaporte" 
+                            ng-model="donacion" 
+                            bs-options="donante.per_dni for donante in matrizPersonas" 
+                            bs-typeahead 
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Nombre del donante *</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" 
+                            ng-readonly="true" 
+                            value="{{donacion.per_apellido}} {{donacion.per_nombre}}" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Fecha de donación *</label>
+                        <div ng-controller="FormularioDonacionDatepickerController">
+                            <div class="form-group">
+                                <p class="input-group">
+                                    <input type="text" class="form-control" 
+                                        uib-datepicker-popup 
+                                        ng-model="donacion.don_fecha" 
+                                        is-open="popup.abierto"
+                                        datepicker-options="opcionesDeFecha" 
+                                        date-disabled="desactivado(date, mode)" 
+                                        ng-required="true" 
+                                        close-text="Cerrar" 
+                                    />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="abrir()">
+                                            <i class="glyphicon glyphicon-calendar"></i>
+                                        </button>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <!--
+                        <datepicker-personalizado></datepicker-personalizado>
+                        -->
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <input type="submit" value="Aceptar" class="btn btn-primary btn-block">
+                </div>
+            </div>
+            <!--
+            <div class="row">
+                <div class="col-md-4 col-md-offset-2">
+                    <input type="submit" value="Nueva"      class="btn btn-primary">
+                </div>
+                
+                <div class="col-md-4 col-md-offset-2">
+                    <input type="submit" value="Actualizar" class="btn btn-primary">
+                </div>
+            </div>
+            -->
+        </form>
+    </div>
+</section>

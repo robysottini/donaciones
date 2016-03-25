@@ -1,6 +1,6 @@
 <?php
 
-include("../librerias/CDatabase.php");
+include("../../librerias/CDatabase.php");
 header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept');
 
 $oDB = new CDatabase();
@@ -37,13 +37,13 @@ switch($_REQUEST['action']) {
         print(json_encode($arr));
         break;
 
-    case 'agregar-donacion':        
+    case 'agregar-donacion':
         $donacion = json_decode(file_get_contents("php://input"));
         //echo "$donacion->nombre";
         $valores = 
             "(" . 
-            "'" . $donacion->ano . "-" . $donacion->mes . "-" . $donacion->dia . "', " . 
-                  $donacion->persona .
+            "'" . $donacion->don_fecha . "', " . 
+                  $donacion->per_id .
             ")"
         ;
         

@@ -1,0 +1,7 @@
+TODO:
+
+Qué es módulo de configuración.
+Qué es módulo de configuración de una ruta.
+Qué es registrar.
+Qué es VM.
+Qué es activate().

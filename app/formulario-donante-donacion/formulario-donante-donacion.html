@@ -1,0 +1,155 @@
+<section>    
+    <div class="row well well-sm col-md-12">
+
+        <form name="formularioDonanteDonacion" ng-submit="formularioDonanteDonacion.$valid && agregarDonanteDonacion()" novalidate>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+                    
+                    <!-- Sección del alta del donante.
+                    –––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+                    <div class="form-group">
+                        <label class="control-label">Apellido *</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="donanteDonacion.per_apellido" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Nombre *</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="donanteDonacion.per_nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">DNI/Pasaporte *</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="donanteDonacion.per_dni" required>
+                    </div>
+
+                    <label class="control-label">Fecha de nacimiento *</label>
+                    <div ng-controller="FormularioDonanteDonacionDatepickerController">
+                        <div class="form-group">
+                            <p class="input-group">
+                                <input type="text" class="form-control" 
+                                    uib-datepicker-popup 
+                                    ng-model="donanteDonacion.per_fecha_nacimiento" 
+                                    is-open="popup.abierto"
+                                    datepicker-options="opcionesDeFecha" 
+                                    date-disabled="desactivado(date, mode)" 
+                                    ng-required="true" 
+                                    close-text="Cerrar" 
+                                />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="abrir()">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Teléfono *</label>
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only">Código de área</label>
+                                <input type="tel" class="form-control ng-pristine ng-invalid" size="2" ng-model="donanteDonacion.per_codigo_area" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only">Número de teléfono *</label>
+                                <input type="tel" class="form-control ng-pristine ng-invalid" size="6" ng-model="donanteDonacion.per_telefono" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input type="email" class="form-control" ng-model="donanteDonacion.per_email">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Dirección *</label>
+                        <input type="text" class="form-control ng-pristine ng-invalid" ng-model="donanteDonacion.per_direccion" required>
+                    </div>
+
+                    <!-- select.js de Angular Strap -->
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <label class="control-label sr-only">Grupo sanguíneo</label>
+                            <!-- select.js de Angular Strap -->
+                            <button type="button" class="btn btn-default" 
+                                ng-model="donanteDonacion.per_gru_sanguineo" 
+                                data-animation="am-fade" 
+                                data-html="1" 
+                                bs-options="grupoSanguineo.gru_id as grupoSanguineo.gru_nombre for grupoSanguineo in matrizGruposSanguineos" 
+                                placeholder="Grupo sanguíneo" 
+                                bs-select 
+                            >
+                            Action <span class="caret"></span>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label sr-only">Frecuencia de donación</label>
+                            <!-- select.js de Angular Strap -->
+                            <button type="button" class="btn btn-default" 
+                                ng-model="donanteDonacion.per_frecuencia" 
+                                data-animation="am-fade" 
+                                data-html="1" 
+                                bs-options="frecuenciaDeDonacion.fre_id as frecuenciaDeDonacion.fre_nombre for frecuenciaDeDonacion in matrizFrecuenciasDeDonacion" 
+                                placeholder="Frecuencia de donación" 
+                                bs-select
+                            >
+                            Action <span class="caret"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-1">
+                    <div class="form-group">
+                        <label class="control-label">Nota</label>
+                        <textarea class="form-control" rows="4" ng-model="donanteDonacion.per_nota"></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Sección de alta de la donación.
+            –––––––––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <div class="row">
+                <div class="col-md-4 col-md-offset-1">
+
+                    <label class="control-label">Fecha de última donación *</label>
+                    <div ng-controller="NuevoDonanteDatepickerController">
+                        <div class="form-group">
+                            <p class="input-group">
+                                <input type="text" class="form-control" 
+                                    uib-datepicker-popup 
+                                    ng-model="donanteDonacion.don_fecha" 
+                                    is-open="popup.abierto"
+                                    datepicker-options="opcionesDeFecha" 
+                                    date-disabled="desactivado(date, mode)" 
+                                    ng-required="true" 
+                                    close-text="Cerrar" 
+                                />
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="abrir()">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <input type="submit" value="Aceptar" class="btn btn-primary btn-block">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
