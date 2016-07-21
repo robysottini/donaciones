@@ -163,6 +163,50 @@ switch($_REQUEST['action']) {
         // Convierte un string a formato JSON.        
         print(json_encode($arr));
         break;
+
+    case 'eliminar-persona': 
+        $persona = json_decode(file_get_contents("php://input")); 
+
+        $per_id = $persona->per_id; 
+
+        $sSQL = " 
+            BEGIN 
+            ; 
+
+            DELETE FROM 
+            donaciones 
+            WHERE 
+            don_persona =  '" . $per_id . "'
+            ; 
+
+            DELETE FROM 
+            personas 
+            WHERE 
+            per_id =  '" . $per_id . "'
+            ; 
+
+            COMMIT 
+            ; 
+        "; 
+
+        $stringPrueba = "abc"; 
+        echo ("String: " . $sSQL); 
+
+        // Creo una conexión. 
+        $oDB->connect(); 
+
+        // Ejecutar la consulta SQL. 
+        $oDB->query($sSQL); 
+
+        // Desconectarse de la base de datos. 
+        $oDB->disconnect(); 
+
+        // Guardar resultado de la consulta SQL en un arreglo. 
+        $arr = $oDB->resultToArray(); 
+
+        // Convierte un string a formato JSON.         
+        print(json_encode($arr)); 
+        break; 
 }
 
 ?>

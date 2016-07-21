@@ -21,7 +21,13 @@
             return $state.is(route);
         };
 
-        $scope.tabs = [{
+        $scope.tabs = [
+        {
+            heading: 'Donantes', 
+            route:   'main.estadoDonantes', 
+            active:  false
+        }, 
+        {
             heading: 'Nuevo donante', 
             route:   'main.estadoNuevoDonante', 
             active:  false
@@ -29,11 +35,6 @@
         {
             heading: 'Modificar donante', 
             route:   'main.estadoModificarDonante', 
-            active:  false
-        }, 
-        {
-            heading: 'Donantes', 
-            route:   'main.estadoDonantes', 
             active:  false
         }, 
         {

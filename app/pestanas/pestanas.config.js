@@ -13,13 +13,19 @@
     pestanas.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function pestanas($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/main/nuevo-donante');
+        $urlRouterProvider.otherwise('/main/donantes');
         $stateProvider
             .state('main', {
                 url:         '/main', 
                 templateUrl: 'app/pestanas/pestanas.html', 
                 abtract:     true
             })
+            .state('main.estadoDonantes', {  
+                url:          '/donantes',  
+                templateUrl:  'app/donantes/donantes.html', 
+                controller:   'DonantesController', 
+                controllerAs: 'donantesCtrl' 
+            }) 
             .state('main.estadoNuevoDonante', { 
                 url:          '/nuevo-donante', 
                 templateUrl:  'app/nuevo-donante/nuevo-donante.html',
@@ -31,12 +37,6 @@
                 templateUrl:  'app/modificar-donante/modificar-donante.html',
                 controller:   'ModificarDonanteController',
                 controllerAs: 'modificarDonanteCtrl'
-            })
-            .state('main.estadoDonantes', { 
-                url:          '/donantes', 
-                templateUrl:  'app/donantes/donantes.html',
-                controller:   'DonantesController',
-                controllerAs: 'donantesCtrl'
             })
             .state('main.estadoFormularioDonacion', { 
                 url:          '/nueva-donacion', 

@@ -23,12 +23,13 @@
         $scope.matrizPersonas = [];
         $scope.donanteSeleccionado = {};
         $scope.persona = {        
-            /*
-            dni: 33931635,
-            nombre: 'Elizabeth',
-            apellido: 'Ponce',
-            per_fecha_nacimiento: '2000-12-25',
-            nota: ',
+            eliminar: false 
+            /* 
+            dni: 33931635, 
+            nombre: 'Elizabeth', 
+            apellido: 'Ponce', 
+            per_fecha_nacimiento: '2000-12-25', 
+            nota: 'Tatuaje de ala en brazo izquierdo', 
             per_frecuencia: 3,
             direccion: 'Las Vertientes 639',
             per_gru_sanguineo: 3,
@@ -82,22 +83,34 @@
          * una persona.
          */
         $scope.modificarPersona = function() {
-            //console.log('Persona para modificar: ' + $scope.persona.nombre);
-            $http
-                .post('app/modificar-donante/modificar-donante.php?action=modificar-persona', $scope.persona)
-                .then(function() {
-                    //console.log('Respuesta: ' + response.status);
-                    //console.log('Data: ' + response.data);
-                    $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert.
-                    $scope.modificarDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original.
-                }, function(response) {
-                    console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').');
-                });
-        };
-
-        $scope.matrizAnos = [
-            {ano: 2014}, 
-            {ano: 2015}
-        ];   
+            console.log('Persona: ' + $scope); 
+            console.log('Persona para eliminar: ' + $scope.persona.nombre); 
+            console.log('Id: ' + $scope.personaid); 
+            if ($scope.persona.eliminar) { 
+                $http 
+                    .post('app/modificar-donante/modificar-donante.php?action=eliminar-persona', $scope.persona) 
+                    .then(function() { 
+                        //console.log('Respuesta: ' + response.status); 
+                        //console.log('Data: ' + response.data); 
+                        $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert. 
+                        $scope.modificarDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original. 
+                    }, function(response) { 
+                        console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').'); 
+                    }); 
+            } 
+            else { 
+                //console.log('Persona para modificar: ' + $scope.persona.nombre); 
+                $http 
+                    .post('app/modificar-donante/modificar-donante.php?action=modificar-persona', $scope.persona) 
+                    .then(function() { 
+                        //console.log('Respuesta: ' + response.status); 
+                        //console.log('Data: ' + response.data); 
+                        $scope.persona = {}; // Limpio los campos. Acá se puede mostrar un UI-Alert. 
+                        $scope.modificarDonante.$setPristine(); // Establezco el formulario y todos sus controles al estado original. 
+                    }, function(response) { 
+                        console.log('Error en formulario-donacion.controller.js (estado ' + response.status + ' ' + response.statusText + ').'); 
+                    }); 
+            } 
+        }; 
     }
 })();
