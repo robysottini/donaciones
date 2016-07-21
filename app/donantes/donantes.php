@@ -62,34 +62,6 @@ switch($_REQUEST['action']) {
             ORDER BY 
                 donaciones2.don_ultima + frecuencias_donacion.fre_nombre * 30 DESC;
         ";
-        /*
-            "
-            SELECT 
-                row_number() OVER(ORDER BY per_apellido) AS numero_fila,
-                personas.per_id, 
-                personas.per_dni, 
-                personas.per_nombre, 
-                personas.per_apellido, 
-                personas.per_fecha_nacimiento, 
-                personas.per_nota, 
-                personas.per_email, 
-                personas.per_codigo_area || ' ' || per_telefono AS per_telefono, 
-                personas.per_direccion, 
-                grupos_sanguineos.gru_id, 
-                grupos_sanguineos.gru_nombre AS gru_nombre, 
-                frecuencias_donacion.fre_id, 
-                frecuencias_donacion.fre_nombre  || ' meses' AS fre_nombre 
-            FROM personas
-            LEFT JOIN grupos_sanguineos ON (personas.per_gru_sanguineo = grupos_sanguineos.gru_id)
-            LEFT JOIN frecuencias_donacion ON (personas.per_frecuencia = frecuencias_donacion.fre_id);
-            ";
-        */
-
-        /*
-        select don_persona, max(don_fecha), max(don_fecha) + 60 AS proxima
-        from donaciones
-        group by don_persona;
-        */
 
         $oDB->connect();        
 
